@@ -1,6 +1,19 @@
 <template>
-  <nav><router-link to="/">Home</router-link> |</nav>
-  <router-view />
+  <HomeView />
+  <header>
+    <LayoutHeader />
+  </header>
 </template>
 
-<style></style>
+<script>
+import LayoutHeader from "@/components/LayoutHeader.vue";
+import HomeView from "@/views/HomeView.vue";
+
+export default {
+  name: "App",
+  components: {
+    HomeView,
+    LayoutHeader,
+  },
+};
+</script>

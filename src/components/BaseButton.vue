@@ -1,11 +1,13 @@
 <template>
-  <button class="button-75" role="button">
-    <span class="text"><slot /></span>
-  </button>
+  <div>
+    <button class="base-button" role="button">
+      <span class="text"><slot /></span>
+    </button>
+  </div>
 </template>
 
 <style scoped>
-.button-75 {
+.base-button {
   align-items: center;
   background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
   border: 0;
@@ -33,30 +35,30 @@
   touch-action: manipulation;
 }
 
-.button-75:active {
+.base-button:active {
   outline: 0;
 }
 
-.button-75:hover {
+.base-button:hover {
   outline: 0;
 }
 
-.button-75 span {
+.base-button span {
   transition: all 200ms;
 }
 
-.button-75:hover span {
+.base-button:hover span {
   transform: scale(0.9);
   opacity: 0.75;
 }
 
 @media screen and (max-width: 991px) {
-  .button-75 {
+  .base-button {
     font-size: 15px;
     height: 50px;
   }
 
-  .button-75 span {
+  .base-button span {
     line-height: 50px;
   }
 }
