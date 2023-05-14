@@ -1,15 +1,13 @@
 <template>
-  <BaseButton>blub</BaseButton>
-  <h1>New Project</h1>
+  <header></header>
+  <section>
+    <div></div>
+  </section>
 </template>
 
 <script>
-import BaseButton from "@/components/BaseButton.vue";
-
 export default {
   name: "HomeView",
-  components: {
-    BaseButton,
-  },
+  components: {},
 };
 </script>
