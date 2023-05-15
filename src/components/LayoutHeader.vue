@@ -6,9 +6,11 @@
       </div>
       <div class="background-img"></div>
       <nav class="home-logo">
-        <HomeLogo class="new-logo" />
-        <nav class="new-home"><router-link to="/">Home</router-link> |</nav>
+        <nav>
+          <router-link to="/"><HomeLogo alt="Home" /></router-link>
+        </nav>
       </nav>
+      <p class="header-text">HERBA URBANA</p>
     </section>
   </header>
 </template>
@@ -35,32 +37,27 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 @media (max-width: 1259px) {
   .background-img {
-    background-image: url("@/assets/header-img.png");
+    background-image: url("@/assets/header_neu.png");
   }
 }
 
 @media (min-width: 1260px) {
   .background-img {
-    background-image: url("@/assets/header-img.png");
+    background-image: url("@/assets/header_neu.png");
   }
 }
+
+.header-text {
+  font-size: 20px;
+  color: var(--secondary);
+}
+
 .input-header {
   position: absolute;
   right: 10px;
   top: 10px;
-}
-.new-logo {
-  position: absolute;
-  left: 0px;
-  top: 70px;
-}
-.new-home {
-  position: absolute;
-  left: 50px;
-  top: 100px;
 }
 </style>
