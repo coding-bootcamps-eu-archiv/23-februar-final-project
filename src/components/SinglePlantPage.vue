@@ -5,8 +5,8 @@
       <img :src="image" key="image" alt="Image" />
       <p class="info-text"></p>
       <div>
-        <p></p>
-        <p></p>
+        <p class="aussaat"></p>
+        <p class="keimzeit"></p>
       </div>
     </div>
   </main>
