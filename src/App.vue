@@ -1,13 +1,42 @@
 <template>
-<<<<<<< Updated upstream
-  <nav><router-link to="/">Home</router-link> |</nav>
-  <router-view />
-=======
   <header>
+    <MenuSidebar />
     <LayoutHeader />
   </header>
-  <HomeView />
->>>>>>> Stashed changes
+  <main>
+    <router-view />
+  </main>
+
+  <footer>
+    <LayoutFooter />
+  </footer>
 </template>
 
-<style></style>
+<script>
+import LayoutHeader from "@/components/LayoutHeader.vue";
+
+import LayoutFooter from "@/components/LayoutFooter.vue";
+
+import MenuSidebar from "./components/MenuSidebar.vue";
+
+export default {
+  name: "App",
+  components: {
+    LayoutHeader,
+    LayoutFooter,
+    MenuSidebar,
+  },
+};
+</script>
+
+<style>
+@import url("./assets/global.css");
+
+body,
+main {
+  width: 100vw;
+  height: 100vh;
+  /* padding-bottom: 100px; */
+  border: 2px solid black;
+}
+</style>
