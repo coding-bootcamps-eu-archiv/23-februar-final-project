@@ -2,14 +2,14 @@
   <div
     class="side-menu"
     :style="{
-      width: active ? '0px' : '250px',
+      width: active ? '250px' : '0px',
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
-    <router-link to="/">About</router-link>
     <router-link to="/">Pflanzen</router-link>
     <router-link to="/">Jahreszeit</router-link>
     <router-link to="/">Matches</router-link>
+    <router-link to="/contact">Contact</router-link>
   </div>
 
   <button class="openbtn" @click="handleClick">&#9776;</button>

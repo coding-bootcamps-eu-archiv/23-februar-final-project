@@ -30,13 +30,13 @@ export default {
 </script>
 
 <style>
-@import url("./assets/global.css");
+@import url("./assets/styles.css");
 
+html,
 body,
 main {
   width: 100vw;
   height: 100vh;
-  /* padding-bottom: 100px; */
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 </style>
