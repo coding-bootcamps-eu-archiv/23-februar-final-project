@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <section class="plant-content">
     <div>
       <h1>{{ name }}</h1>
       <img :src="image" key="image" alt="Image" />
@@ -9,7 +9,7 @@
         <p class="keimzeit"></p>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-main {
+.plant-content {
   display: flex;
 }
 </style>

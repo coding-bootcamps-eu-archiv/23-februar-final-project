@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .area-main {
   margin-top: 2rem;
-  width: 100%;
+  width: 100vw;
   height: 100px; /* Height of the footer */
   display: flex;
   flex-direction: column;

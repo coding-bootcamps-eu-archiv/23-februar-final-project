@@ -1,12 +1,14 @@
 <template>
   <header class="header">
     <section class="header__section">
+      <div class="input-header">
+        <input type="text" />
+      </div>
       <div class="background-img"></div>
       <nav class="home-logo">
         <nav>
           <router-link to="/"><HomeLogo alt="Home" /></router-link>
         </nav>
-        <router-view />
       </nav>
       <p class="header-text">HERBA URBANA</p>
     </section>
@@ -51,5 +53,11 @@ export default {
 .header-text {
   font-size: 20px;
   color: var(--secondary);
+}
+
+.input-header {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 </style>
