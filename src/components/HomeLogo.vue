@@ -8,10 +8,15 @@
 .home-logo {
   box-sizing: border-box;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  scale: 0.2;
+  transform-origin: 100px 100px;
+  /* display: flex;
+  flex-direction: column; */
   height: 54px;
-  justify-content: center;
+  /* justify-content: center; */
   max-width: 100%;
   padding-left: 20px;
   padding-right: 20px;

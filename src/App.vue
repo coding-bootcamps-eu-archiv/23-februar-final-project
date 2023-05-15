@@ -1,19 +1,42 @@
 <template>
-  <HomeView />
   <header>
+    <MenuSidebar />
     <LayoutHeader />
   </header>
+  <main>
+    <router-view />
+  </main>
+
+  <footer>
+    <LayoutFooter />
+  </footer>
 </template>
 
 <script>
 import LayoutHeader from "@/components/LayoutHeader.vue";
-import HomeView from "@/views/HomeView.vue";
+
+import LayoutFooter from "@/components/LayoutFooter.vue";
+
+import MenuSidebar from "./components/MenuSidebar.vue";
 
 export default {
   name: "App",
   components: {
-    HomeView,
     LayoutHeader,
+    LayoutFooter,
+    MenuSidebar,
   },
 };
 </script>
+
+<style>
+@import url("./assets/global.css");
+
+body,
+main {
+  width: 100vw;
+  height: 100vh;
+  /* padding-bottom: 100px; */
+  border: 2px solid black;
+}
+</style>
