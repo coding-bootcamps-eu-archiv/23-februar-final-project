@@ -1,9 +1,7 @@
 <template>
-<<<<<<< Updated upstream
-  <h1>New Project</h1>
-=======
-  <div></div>
->>>>>>> Stashed changes
+  <section>
+    <div></div>
+  </section>
 </template>
 
 <script>
