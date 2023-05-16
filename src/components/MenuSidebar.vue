@@ -27,6 +27,7 @@ export default {
   methods: {
     handleClick() {
       this.active = !this.active;
+      console.log(this.active);
     },
   },
 };

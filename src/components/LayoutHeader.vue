@@ -12,16 +12,20 @@
       </nav>
       <p class="header-text">HERBA URBANA</p>
     </section>
+    <MonthsBar />
   </header>
 </template>
 
 <script>
 import HomeLogo from "@/components/HomeLogo.vue";
 
+import MonthsBar from "@/components/MonthsBar.vue";
+
 export default {
   name: "HomeView",
   components: {
     HomeLogo,
+    MonthsBar,
   },
 };
 </script>
