@@ -2,7 +2,7 @@
   <header class="header">
     <section class="header__section">
       <div class="input-header">
-        <input type="text" />
+        <input type="search" results="5" placeholder="Search..." name="s" />
       </div>
       <div class="background-img"></div>
       <nav class="home-logo">
@@ -53,8 +53,16 @@ export default {
 .header-text {
   font-size: 20px;
   color: var(--secondary);
+  position: absolute;
+  top: 80px;
+  right: 50px;
 }
 
+.home-logo {
+  position: absolute;
+  top: 0.5px;
+  left: 10px;
+}
 .input-header {
   position: absolute;
   right: 10px;

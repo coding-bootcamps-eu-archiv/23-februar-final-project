@@ -6,11 +6,9 @@
       </nav>
     </nav>
     <div>
-      <a
-        class="link-footer"
-        href="mailto:bkmso158@gmail.com?to=raphaela.becker@posteo.de"
-        >Kontakt</a
-      >
+      <nav>
+        <router-link to="/contact" class="link-footer">Kontakt</router-link>
+      </nav>
     </div>
   </footer>
 </template>
