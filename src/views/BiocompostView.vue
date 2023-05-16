@@ -11,6 +11,7 @@
     </div>
   </section>
 </template>
+
 <style scoped>
 .service {
   position: absolute;
