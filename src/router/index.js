@@ -23,9 +23,15 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
+
     path: "/months/:month",
     name: "months",
     component: () => import("../views/MonthsView.vue"),
+
+    path: "/plant",
+    name: "plant",
+    component: () => import("../views/PlantView"),
+
   },
 ];
 
