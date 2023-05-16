@@ -7,6 +7,11 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/plant",
+    name: "plant",
+    component: () => import("../views/PlantView"),
+  },
 ];
 
 const router = createRouter({
