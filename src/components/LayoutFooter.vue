@@ -1,12 +1,14 @@
 <template>
   <footer>
-    <div><HomeLogo class="logo-footer" /></div>
+    <nav class="home-logo">
+      <nav>
+        <router-link to="/"><HomeLogo alt="Home" /></router-link>
+      </nav>
+    </nav>
     <div>
-      <a
-        class="link-footer"
-        href="mailto:bkmso158@gmail.com?to=raphaela.becker@posteo.de"
-        >Kontakt</a
-      >
+      <nav>
+        <router-link to="/contact" class="link-footer">Kontakt</router-link>
+      </nav>
     </div>
   </footer>
 </template>
@@ -24,7 +26,7 @@ export default {
 
 <style scoped>
 footer {
-  background-color: #fa8369;
+  background-color: #ad4731;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -33,6 +35,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 10px;
 }
 /* 
 @media screen and (max-width: 768px) {
@@ -42,12 +45,6 @@ footer {
   }
 } */
 .link-footer {
-  color: #42b389;
-}
-.logo-footer {
-  /* scale: 0.5; */
-  position: absolute;
-  left: 0px;
-  top: -100px;
+  color: #77facb;
 }
 </style>

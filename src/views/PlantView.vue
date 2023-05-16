@@ -87,12 +87,14 @@
 export default {
   name: "PlantView",
   components: {},
-  probs: {
-    name: { type: String },
-    directSowing: { type: String },
-    plantDistance: { type: Number },
-    pharvestable: { type: String },
-    location: { type: String },
+  data() {
+    return {
+      name: "",
+      directSowing: "",
+      plantDistance: 0,
+      pharvestable: "",
+      location: "",
+    };
   },
 };
 
