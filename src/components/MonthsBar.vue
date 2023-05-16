@@ -1,8 +1,8 @@
 <template>
   <section>
-    <button class="tab" @click.prevent="handleClick">Jan</button>
-    <button class="tab" @click.prevent="handleClick">Feb</button>
-    <button class="tab" @click.prevent="handleClick">Mär</button>
+    <button class="tab" @click.prevent="handleClick('Jan')">Jan</button>
+    <button class="tab" @click.prevent="handleClick('Feb')">Feb</button>
+    <button class="tab" @click.prevent="handleClick('Mär')">Mär</button>
     <button class="tab" @click.prevent="handleClick">Apr</button>
     <button class="tab" @click.prevent="handleClick">Mai</button>
     <button class="tab" @click.prevent="handleClick">Jun</button>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "MonthBar",
+  name: "MonthsBar",
   emits: ["button-click"],
   props: {
     month: { type: String },
@@ -28,8 +28,9 @@ export default {
     };
   },
   methods: {
-    handleClick() {
+    handleClick(clickedMonth) {
       this.active = !this.active;
+      this.$router.push({ name: "months", params: { month: clickedMonth } });
       console.log(this.active);
     },
   },

@@ -23,7 +23,7 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/months",
+    path: "/months/:month",
     name: "months",
     component: () => import("../views/MonthsView.vue"),
   },
