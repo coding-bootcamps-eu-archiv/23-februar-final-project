@@ -1,6 +1,6 @@
 <template>
   <main>
-    {{ plant }}
+    <!-- {{ plant }} -->
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -99,12 +99,8 @@ export default {
     };
   },
   methods: {
-    // chooseMonth() {
-    //   return this.$route.params.month; //gibt mir den Namen vom Monat zurück
-    // },
-    //***********************************************+ */
     readDataFromApi() {
-      fetch("http://localhost:3000/plants/" + this.$route.params.id) //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
+      fetch("http://localhost:3000/plants/" + this.$route.params.id)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -113,10 +109,8 @@ export default {
           }
         })
         .then((plantsApi) => {
-          this.plant = plantsApi; //oder this.plants.push(plantsAPI)???????
+          this.plant = plantsApi;
           console.log(this.plant);
-          //*
-          //   renderHtml() MACHT VUE!!!!
         });
     },
   },

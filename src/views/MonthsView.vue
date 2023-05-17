@@ -1,28 +1,27 @@
 <template>
-  <transition-group>
+  <section>
+    <h1>Alle Pflanzen</h1>
     <div v-for="plant in plants" :key="plant.id">
       <div class="show-plants">
-        <span class="plant-name">{{ plants.name }}</span>
+        <span>{{ plant.group.name }}</span>
+        <span class="plant-name">{{ plant.name }}</span>
         <span
           class="plant-img"
-          :style="{ backgroundImage: 'url(' + plants.image + ')' }"
+          :style="`background-image: url(http://localhost:3000${plant.images[0]})`"
         ></span>
-        <!-- this.plant.image ist ein Pfad-->
+        <router-link :to="{ name: 'plant', params: { id: plant.id } }"
+          >Details
+        </router-link>
       </div>
     </div>
-  </transition-group>
+  </section>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      plants: [
-        {
-          name: "Erdbeere",
-          image: "@/assets/placeholder1_SV.jpg",
-        },
-      ],
+      plants: [],
     };
   },
   methods: {
@@ -31,9 +30,7 @@ export default {
     // },
     //***********************************************+ */
     readDataFromApi() {
-      const currentMonth = this.$route.params.month;
-
-      fetch("http://localhost:3000/plants" + currentMonth) //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
+      fetch("http://localhost:3000/plants?_expand=group") //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -49,6 +46,9 @@ export default {
         });
     },
   },
+  created() {
+    this.readDataFromApi();
+  },
 };
 </script>
 
@@ -63,7 +63,7 @@ export default {
 }
 .plant-img {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
 }
 </style>
