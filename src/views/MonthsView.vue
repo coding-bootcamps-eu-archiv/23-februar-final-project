@@ -33,7 +33,7 @@ export default {
     readDataFromApi() {
       const currentMonth = this.$route.params.month;
 
-      fetch("http://Joe's - API/" + currentMonth) //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
+      fetch("http://localhost:3000/plants" + currentMonth) //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
