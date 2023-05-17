@@ -1,5 +1,6 @@
 <template>
   <main>
+    {{ plant }}
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -65,7 +66,7 @@
     <!-----------right---------->
     <section class="container-right">
       <div class="right-content">
-        <h1 class="h1">{{ name }} name</h1>
+        <h1 class="h1">{{ plant.name }}</h1>
         <p class="info-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iusto
           doloribus similique ipsam architecto, laborum esse illo hic error
@@ -89,12 +90,38 @@ export default {
   components: {},
   data() {
     return {
+      plant: {},
       name: "",
       directSowing: "",
       plantDistance: 0,
       pharvestable: "",
       location: "",
     };
+  },
+  methods: {
+    // chooseMonth() {
+    //   return this.$route.params.month; //gibt mir den Namen vom Monat zurück
+    // },
+    //***********************************************+ */
+    readDataFromApi() {
+      fetch("http://localhost:3000/plants/" + this.$route.params.id) //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
+        .then((response) => {
+          if (response.status >= 200 && response.status <= 299) {
+            return response.json();
+          } else {
+            console.log("ERROR");
+          }
+        })
+        .then((plantsApi) => {
+          this.plant = plantsApi; //oder this.plants.push(plantsAPI)???????
+          console.log(this.plant);
+          //*
+          //   renderHtml() MACHT VUE!!!!
+        });
+    },
+  },
+  created() {
+    this.readDataFromApi();
   },
 };
 </script>

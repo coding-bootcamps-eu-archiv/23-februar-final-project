@@ -28,9 +28,14 @@ const routes = [
     component: () => import("../views/MonthsView.vue"),
   },
   {
-    path: "/plant",
+    path: "/plant/:id",
     name: "plant",
-    component: () => import("../views/PlantView"),
+    component: () => import("../views/PlantView.vue"),
+  },
+  {
+    path: "/allplants",
+    name: "allplants",
+    component: () => import("../views/PlantsListView.vue"),
   },
 ];
 

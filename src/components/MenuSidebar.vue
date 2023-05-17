@@ -6,11 +6,9 @@
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
-    <router-link to="/plant">Pflanzen</router-link>
+    <router-link to="/allplants">Pflanzen</router-link>
     <router-link to="/matches">Matches</router-link>
-
     <router-link to="/biocompost">Biodünger</router-link>
-
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
   </div>
