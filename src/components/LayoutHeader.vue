@@ -1,19 +1,21 @@
 <template>
-  <header class="header">
-    <section class="header__section">
+  <div>
+    <div class="header-container">
+      <div class="header-left">
+        <MenuSidebar />
+        <nav class="home-logo-wrapper">
+          <router-link to="/">
+            <HomeLogo alt="Home" />
+          </router-link>
+        </nav>
+      </div>
       <div class="input-header">
         <input type="search" results="5" placeholder="Search..." name="s" />
       </div>
-      <div class="background-img"></div>
-      <nav class="home-logo">
-        <nav>
-          <router-link to="/"><HomeLogo alt="Home" /></router-link>
-        </nav>
-      </nav>
-      <p class="header-text">HERBA URBANA</p>
-    </section>
+      <h1 class="header-text">HERBA URBANA</h1>
+    </div>
     <MonthsBar />
-  </header>
+  </div>
 </template>
 
 <script>
@@ -21,26 +23,65 @@ import HomeLogo from "@/components/HomeLogo.vue";
 
 import MonthsBar from "@/components/MonthsBar.vue";
 
+import MenuSidebar from "@/components/MenuSidebar.vue";
+
 export default {
   name: "HomeView",
   components: {
     HomeLogo,
     MonthsBar,
+    MenuSidebar,
   },
 };
 </script>
 
 <style scoped>
-.background-img {
+h1 {
+  margin-block: 0;
+}
+.header-container {
+  background-image: url("@/assets/header_neu.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  width: 100%;
-  height: 8rem;
+  padding-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+.header-left {
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  grid-row: span 2;
+}
+
+.home-logo-wrapper {
+  align-self: center;
+}
+
+.home-logo-wrapper img.home-logo {
+  height: auto;
+  width: min(50%, 150px);
+}
+
+.header__section {
+  display: flex;
+}
+
+.input-header,
+.header-text {
+  justify-self: end;
+}
+
+.input-header {
+  align-self: center;
+  padding-block: 1rem;
+}
+
+.header-text {
+  grid-column: 2 / 3;
 }
 @media (max-width: 1259px) {
   .background-img {
@@ -52,24 +93,5 @@ export default {
   .background-img {
     background-image: url("@/assets/header_neu.png");
   }
-}
-
-.header-text {
-  font-size: 20px;
-  color: var(--secondary);
-  position: absolute;
-  top: 80px;
-  right: 50px;
-}
-
-.home-logo {
-  position: absolute;
-  top: 0.5px;
-  left: 10px;
-}
-.input-header {
-  position: absolute;
-  right: 10px;
-  top: 10px;
 }
 </style>
