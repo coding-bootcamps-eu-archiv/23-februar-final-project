@@ -138,6 +138,11 @@ p {
   margin: 0.5rem;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+}
+
 section {
   padding: 0.2em;
   display: flex;
