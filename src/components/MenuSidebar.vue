@@ -8,9 +8,7 @@
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
     <router-link to="/plant">Pflanzen</router-link>
     <router-link to="/matches">Matches</router-link>
-
     <router-link to="/biocompost">Biodünger</router-link>
-
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
   </div>
@@ -77,7 +75,6 @@ export default {
 /* Style the button that is used to open the sidepanel */
 .openbtn {
   font-size: 20px;
-  cursor: pointer;
   background-color: #fa8369;
   color: black;
   padding: 10px 15px;

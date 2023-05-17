@@ -33,9 +33,11 @@ const routes = [
     component: () => import("../views/PlantView"),
   },
   {
+
     path: "/match",
     name: "matches",
     component: () => import("../views/MatchView"),
+
   },
 ];
 
