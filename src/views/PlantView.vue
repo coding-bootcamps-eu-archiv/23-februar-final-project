@@ -97,26 +97,16 @@ export default {
     };
   },
 };
-
-// export default {
-//   name: "App",
-//   data() {
-//     return {
-//       plants: [
-//         {
-//           name: { type: String },
-//           info: { type: String },
-//           image: "",
-//         },
-//       ],
-//     };
-//   },
-// };
 </script>
 
 <style scoped>
 * {
   box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
 }
 
 .h1 {

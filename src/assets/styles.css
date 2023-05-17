@@ -7,7 +7,11 @@
 }
 
 * {
+
   font-family: "candela";
+
+  box-sizing: border-box;
+
 }
 
 body {
@@ -50,7 +54,7 @@ h4 {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   body {
     width: 100%;
   }
