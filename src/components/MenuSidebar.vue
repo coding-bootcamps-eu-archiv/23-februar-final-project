@@ -75,7 +75,6 @@ export default {
 /* Style the button that is used to open the sidepanel */
 .openbtn {
   font-size: 20px;
-  cursor: pointer;
   background-color: #fa8369;
   color: black;
   padding: 10px 15px;

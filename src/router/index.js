@@ -37,6 +37,11 @@ const routes = [
     name: "allplants",
     component: () => import("../views/PlantsListView.vue"),
   },
+  {
+    path: "/matches",
+    name: "mtches",
+    component: () => import("../views/MatchesView"),
+  },
 ];
 
 const router = createRouter({
