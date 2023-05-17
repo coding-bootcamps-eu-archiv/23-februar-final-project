@@ -1,12 +1,5 @@
 <template>
-  <div class="home-logo">
-    <img
-      class="home-logo"
-      key="home-logo "
-      src="@/assets/logo.png"
-      alt="Logo"
-    />
-  </div>
+  <img class="home-logo" key="home-logo " src="@/assets/logo.png" alt="Logo" />
 </template>
 
 <style scoped>

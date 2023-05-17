@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -80,7 +80,7 @@
         />
       </div>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -128,7 +128,7 @@ p {
   margin: 0.5rem;
 }
 
-main {
+div {
   display: flex;
   flex-direction: row;
 }
@@ -138,15 +138,15 @@ section {
   display: flex;
 }
 
-@media screen and (min-width: 480px) {
-  section {
-    display: block;
+@media screen and (max-width: 480px) {
+  div {
+    flex-direction: column;
   }
 }
 
 @media screen and (max-width: 900px) {
-  section {
-    display: block;
+  div {
+    flex-direction: column;
   }
 }
 

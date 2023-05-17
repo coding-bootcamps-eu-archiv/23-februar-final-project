@@ -34,7 +34,6 @@ export default {
 .area-main {
   margin-top: 2rem;
   width: 100vw;
-  height: 100px;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
