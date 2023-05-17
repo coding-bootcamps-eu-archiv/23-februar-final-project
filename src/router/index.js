@@ -32,6 +32,11 @@ const routes = [
     name: "plant",
     component: () => import("../views/PlantView"),
   },
+  {
+    path: "/match",
+    name: "matches",
+    component: () => import("../views/MatchView"),
+  },
 ];
 
 const router = createRouter({
