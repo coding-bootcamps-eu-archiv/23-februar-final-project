@@ -1,17 +1,17 @@
 <template>
-  <section>
-    <button class="tab" @click.prevent="handleClick('Jan')">Jan</button>
-    <button class="tab" @click.prevent="handleClick('Feb')">Feb</button>
-    <button class="tab" @click.prevent="handleClick('Mär')">Mär</button>
-    <button class="tab" @click.prevent="handleClick">Apr</button>
-    <button class="tab" @click.prevent="handleClick">Mai</button>
-    <button class="tab" @click.prevent="handleClick">Jun</button>
-    <button class="tab" @click.prevent="handleClick">Jul</button>
-    <button class="tab" @click.prevent="handleClick">Aug</button>
-    <button class="tab" @click.prevent="handleClick">Sep</button>
-    <button class="tab" @click.prevent="handleClick">Okt</button>
-    <button class="tab" @click.prevent="handleClick">Nov</button>
-    <button class="tab" @click.prevent="handleClick">Dez</button>
+  <section class="months-list">
+    <button class="tab" @click.prevent="handleClick('Januar')">Jan</button>
+    <button class="tab" @click.prevent="handleClick('Februar')">Feb</button>
+    <button class="tab" @click.prevent="handleClick('März')">Mär</button>
+    <button class="tab" @click.prevent="handleClick('April')">Apr</button>
+    <button class="tab" @click.prevent="handleClick('Mai')">Mai</button>
+    <button class="tab" @click.prevent="handleClick('Juni')">Jun</button>
+    <button class="tab" @click.prevent="handleClick('Juli')">Jul</button>
+    <button class="tab" @click.prevent="handleClick('August')">Aug</button>
+    <button class="tab" @click.prevent="handleClick('September')">Sep</button>
+    <button class="tab" @click.prevent="handleClick('Oktober')">Okt</button>
+    <button class="tab" @click.prevent="handleClick('November')">Nov</button>
+    <button class="tab" @click.prevent="handleClick('Dezember')">Dez</button>
   </section>
 </template>
 
@@ -31,6 +31,7 @@ export default {
     handleClick(clickedMonth) {
       this.active = !this.active;
       this.$router.push({ name: "months", params: { month: clickedMonth } });
+      this.$emit("button-click");
       console.log(this.active);
     },
   },
@@ -38,8 +39,12 @@ export default {
 </script>
 
 <style scoped>
+.months-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0;
+}
 .tab {
-  width: 50px;
   height: 30px;
   background-color: #fa8369;
   border-bottom-left-radius: 10px;
