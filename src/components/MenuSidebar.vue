@@ -6,7 +6,20 @@
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
-    <router-link to="/allplants">Pflanzen</router-link>
+
+    <details>
+      <summary>Pflanzen</summary>
+      <div>
+        <ul>
+          <li>
+            <router-link to="/plant">Obst</router-link>
+          </li>
+          <li><router-link to="/plant">Gemüse</router-link></li>
+          <li><router-link to="/plant">Kräuter</router-link></li>
+        </ul>
+      </div>
+    </details>
+
     <router-link to="/matches">Matches</router-link>
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
@@ -36,7 +49,6 @@ export default {
 <style scoped>
 /* The sidepanel menu */
 .side-menu {
-  height: 250px; /* Specify a height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -49,13 +61,25 @@ export default {
 }
 
 /* The sidepanel links */
-.side-menu a {
+.side-menu a,
+.side-menu summary {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: black;
   display: block;
   transition: 0.3s;
+}
+
+summary {
+  cursor: pointer;
+}
+
+ul {
+  background-color: rgb(0 0 0 / 0.25);
+  list-style-type: none;
+  padding-left: 0;
+  margin-block: 0;
 }
 
 /* When you mouse over the navigation links, change their color */

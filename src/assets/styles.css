@@ -6,47 +6,59 @@
   --secondary: #fa8369;
 }
 
-* {
+html,
+body,
+#app {
+  height: 100%;
+}
 
+html,
+button,
+input {
   font-family: "candela";
+}
 
+* {
   box-sizing: border-box;
-
 }
 
 body {
   background-color: #fff8e7;
-  margin-bottom: 100px;
+  margin: 0;
 }
 
 @font-face {
   font-family: "candela";
   font-weight: 400;
-  font-style: normal;
-  font-display: auto;
-  src: local("candela"), url("./fonts/candela/CandelaBold.otf") format("otf");
+  src: url("/public/fonts/candela/CandelaBold.otf");
 }
 
 @font-face {
   font-family: "denseletters";
   font-weight: 400;
-  font-style: normal;
-  font-display: auto;
-  src: local("denseletters"),
-    url("./fonts/denseletters/DenseLetters-nRgDO.otf") format("otf");
+  src: url("/public/fonts/denseletters/DenseLetters-nRgDO.otf");
 }
 
 h1 {
   color: var(--secondary-dark);
-  margin-bottom: 15px;
   font-family: "denseletters";
 }
+
 h2,
 h3,
 h4 {
   color: black;
   margin-bottom: 15px;
   font-family: "denseletters";
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
 
 @media (min-width: 480px) {
