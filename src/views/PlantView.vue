@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -28,7 +27,9 @@
             key="distance-image"
             alt="Distance"
           />
+
           <p>{{ plant.plantDistance }} cm</p>
+
         </span>
 
         <span class="pharvestable">
@@ -67,7 +68,9 @@
     <section class="container-right">
       <div class="right-content">
         <h1 class="h1">{{ plant.name }}</h1>
+
         <p class="info-text">{{ plant.description }}</p>
+
 
         <img
           class="secound-plant-picture"
@@ -101,7 +104,6 @@ export default {
         })
         .then((plantsApi) => {
           this.plant = plantsApi;
-          console.log(this.plant);
         });
     },
     convertData() {

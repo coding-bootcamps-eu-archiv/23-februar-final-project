@@ -1,5 +1,6 @@
 <template>
   <section class="service">
+    <InputSearch />
     <div><p class="service-text">Comming soon</p></div>
     <div>
       <img
@@ -12,7 +13,17 @@
   </section>
 </template>
 
-<style scoped>
+<script>
+import InputSearch from "@/components/InputSearch.vue";
+
+export default {
+  name: "FooterMain",
+  components: {
+    InputSearch,
+  },
+};
+</script>
+<style sc ItemInputSearchoped>
 .service {
   position: absolute;
   width: 100%;
