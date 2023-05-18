@@ -29,7 +29,6 @@
           />
 
           <p>{{ plant.plantDistance }} cm</p>
-
         </span>
 
         <span class="pharvestable">
@@ -70,7 +69,6 @@
         <h1 class="h1">{{ plant.name }}</h1>
 
         <p class="info-text">{{ plant.description }}</p>
-
 
         <img
           class="secound-plant-picture"
