@@ -1,7 +1,7 @@
 <template>
   <section class="months-list">
     <button class="tab" @click.prevent="handleClick('Januar')">Jan</button>
-    <button class="tab" @click.prevent="handleClick('Februar')">Feb</button>
+    <!-- <button class="tab" @click.prevent="handleClick('Februar')">Feb</button>
     <button class="tab" @click.prevent="handleClick('März')">Mär</button>
     <button class="tab" @click.prevent="handleClick('April')">Apr</button>
     <button class="tab" @click.prevent="handleClick('Mai')">Mai</button>
@@ -11,7 +11,7 @@
     <button class="tab" @click.prevent="handleClick('September')">Sep</button>
     <button class="tab" @click.prevent="handleClick('Oktober')">Okt</button>
     <button class="tab" @click.prevent="handleClick('November')">Nov</button>
-    <button class="tab" @click.prevent="handleClick('Dezember')">Dez</button>
+    <button class="tab" @click.prevent="handleClick('Dezember')">Dez</button> -->
   </section>
 </template>
 

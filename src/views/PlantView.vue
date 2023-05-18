@@ -1,9 +1,6 @@
 <template>
-
-  <main>
-    <!-- {{ plant }} -->
-
-    <!-------left------>
+  <!-------left------>
+  <div>
     <section class="container-left">
       <div class="left-content">
         <img
@@ -20,7 +17,7 @@
             key="seeding-image"
             alt="Seeding"
           />
-          <p>{{ directSowing }}directSowing</p>
+          <p>{{ plant.directSowing }}</p>
         </span>
 
         <span class="plant-distance">
@@ -30,7 +27,7 @@
             key="distance-image"
             alt="Distance"
           />
-          <p>{{ plantDistance }}plantDistance cm</p>
+          <p>{{ plant.plantDistance }}cm</p>
         </span>
 
         <span class="pharvestable">
@@ -40,7 +37,7 @@
             key="harvest-image"
             alt="Harvest"
           />
-          <p>{{ pharvestable }}pharvestable</p>
+          <p>{{ plant.harvestable }}</p>
         </span>
 
         <span class="location">
@@ -50,7 +47,7 @@
             key="location-image"
             alt="Location"
           />
-          <p>{{ location }}location</p>
+          <p>{{ plant.location }}</p>
         </span>
 
         <span class="Pflege">
@@ -60,7 +57,7 @@
             key="care-image"
             alt="Care"
           />
-          <p>{{ pflege }}pflege</p>
+          <p>{{ plant.care }}</p>
         </span>
       </div>
     </section>
@@ -70,10 +67,7 @@
       <div class="right-content">
         <h1 class="h1">{{ plant.name }}</h1>
         <p class="info-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iusto
-          doloribus similique ipsam architecto, laborum esse illo hic error
-          cumque quidem necessitatibus provident? Porro quam fuga, laborum
-          assumenda possimus beatae!
+          {{ plant.description }}
         </p>
         <img
           class="secound-plant-picture"
@@ -102,7 +96,7 @@ export default {
   },
   methods: {
     readDataFromApi() {
-      fetch("http://localhost:3000/plants/" + this.$route.params.id)
+      fetch("http://localhost:3005/plants/" + this.$route.params.id)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -112,7 +106,6 @@ export default {
         })
         .then((plantsApi) => {
           this.plant = plantsApi;
-          console.log(this.plant);
         });
     },
   },

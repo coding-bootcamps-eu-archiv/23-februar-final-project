@@ -35,14 +35,9 @@ footer {
   justify-content: center;
   align-items: center;
   row-gap: 10px;
+  padding: 10px;
 }
-/* 
-@media screen and (max-width: 768px) {
-  footer {
-    flex-direction: row;
-    justify-content: center;
-  }
-} */
+
 .link-footer {
   color: #77facb;
 }

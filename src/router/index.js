@@ -32,18 +32,16 @@ const routes = [
     name: "plant",
     component: () => import("../views/PlantView.vue"),
   },
-  {
 
+  {
     path: "/allplants",
     name: "allplants",
     component: () => import("../views/PlantsListView.vue"),
-
-
+  },
+  {
     path: "/match",
     name: "matches",
     component: () => import("../views/MatchView"),
-
-
   },
 ];
 

@@ -10,7 +10,7 @@
         </nav>
       </div>
       <div class="input-header">
-        <input type="search" results="5" placeholder="Search..." name="s" />
+        <input type="search" results="5" placeholder="Search..." />
       </div>
       <h1 class="header-text">HERBA URBANA</h1>
     </div>
