@@ -111,7 +111,7 @@ ul {
 
 .openbtn {
   font-size: 20px;
-  background-color: #fa8369;
+  background-color: var(--primary-dark);
   color: black;
   padding: 10px 15px;
   border: none;

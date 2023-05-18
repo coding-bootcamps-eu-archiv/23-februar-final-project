@@ -15,7 +15,7 @@ body,
 html,
 button,
 input {
-  font-family: "candela";
+  font-family: sans-serif;
 }
 
 * {
@@ -23,7 +23,7 @@ input {
 }
 
 body {
-  background-color: #fff8e7;
+  background-color: #262827;
   margin: 0;
 }
 
@@ -40,16 +40,22 @@ body {
 }
 
 h1 {
-  color: var(--secondary-dark);
+  color: var(--secondary);
   font-family: "denseletters";
+  font-size: 35px;
+  text-shadow: 4px 4px 5px black;
 }
 
-h2,
+h2 {
+  color: var(--secondary-dark);
+  margin-bottom: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 h3,
 h4 {
   color: black;
   margin-bottom: 15px;
-  font-family: "denseletters";
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #app {
