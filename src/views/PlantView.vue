@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
