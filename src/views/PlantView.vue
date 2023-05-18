@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- {{ plant }} -->
 
     <!-------left------>
     <section class="container-left">
@@ -19,7 +18,7 @@
             key="seeding-image"
             alt="Seeding"
           />
-          <p>{{ directSowing }}directSowing</p>
+          <p>{{ plant.directSowing }}</p>
         </span>
 
         <span class="plant-distance">
@@ -29,7 +28,7 @@
             key="distance-image"
             alt="Distance"
           />
-          <p>{{ plantDistance }}plantDistance cm</p>
+          <p>{{ plant.plantDistance }} cm</p>
         </span>
 
         <span class="pharvestable">
@@ -39,7 +38,7 @@
             key="harvest-image"
             alt="Harvest"
           />
-          <p>{{ pharvestable }}pharvestable</p>
+          <p>{{ plant.harvestable }}</p>
         </span>
 
         <span class="location">
@@ -49,7 +48,7 @@
             key="location-image"
             alt="Location"
           />
-          <p>{{ location }}location</p>
+          <p>{{ plant.location }}</p>
         </span>
 
         <span class="Pflege">
@@ -59,7 +58,7 @@
             key="care-image"
             alt="Care"
           />
-          <p>{{ pflege }}pflege</p>
+          <p>{{ plant.care }}</p>
         </span>
       </div>
     </section>
@@ -68,17 +67,13 @@
     <section class="container-right">
       <div class="right-content">
         <h1 class="h1">{{ plant.name }}</h1>
-        <p class="info-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iusto
-          doloribus similique ipsam architecto, laborum esse illo hic error
-          cumque quidem necessitatibus provident? Porro quam fuga, laborum
-          assumenda possimus beatae!
-        </p>
+        <p class="info-text">{{ plant.description }}</p>
+
         <img
           class="secound-plant-picture"
-          src="@/assets/placeholder2_SV.jpg"
           key="image"
           alt="Image"
+          :src="`background-image: url(http://localhost:3005${plant.images[1]})`"
         />
       </div>
     </section>
@@ -92,16 +87,11 @@ export default {
   data() {
     return {
       plant: {},
-      name: "",
-      directSowing: "",
-      plantDistance: 0,
-      pharvestable: "",
-      location: "",
     };
   },
   methods: {
     readDataFromApi() {
-      fetch("http://localhost:3000/plants/" + this.$route.params.id)
+      fetch("http://localhost:3005/plants/" + this.$route.params.id)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -114,9 +104,15 @@ export default {
           console.log(this.plant);
         });
     },
+    convertData() {
+      this.plant = this.plant.toString();
+      console.log(this.plant);
+    },
   },
+
   created() {
     this.readDataFromApi();
+    this.convertData();
   },
 };
 </script>
