@@ -1,6 +1,5 @@
 <template>
-
-  <main>
+  <div>
     <!-- {{ plant }} -->
 
     <!-------left------>
