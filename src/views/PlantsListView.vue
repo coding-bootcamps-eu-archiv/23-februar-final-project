@@ -7,7 +7,7 @@
         <span class="plant-name">{{ plant.name }}</span>
         <span
           class="plant-img"
-          :style="`background-image: url(http://localhost:3000${plant.images[0]})`"
+          :style="`background-image: url(http://localhost:3005${plant.images[0]})`"
         ></span>
         <router-link :to="{ name: 'plant', params: { id: plant.id } }"
           >Details
@@ -30,7 +30,7 @@ export default {
     // },
     //***********************************************+ */
     readDataFromApi() {
-      fetch("http://localhost:3000/plants?_expand=group") //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
+      fetch("http://localhost:3005/plants?_expand=group") //die API sucht alle Pflanzen, in denen das Wort "this.$route.params.month"
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
