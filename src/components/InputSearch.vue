@@ -6,6 +6,7 @@
         {{ currentSearch }}</router-link
       >
     </div>
+    <span></span>
   </section>
 </template>
 
@@ -40,19 +41,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.show-plants {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-.plant-name {
-  font-size: 1.5;
-}
-.plant-img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-}
-</style>
