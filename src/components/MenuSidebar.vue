@@ -19,6 +19,7 @@
         </ul>
       </div>
     </details>
+
     <router-link to="/match">Matches</router-link>
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
