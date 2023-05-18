@@ -41,5 +41,10 @@ export default {
 }
 .item {
   background-color: #42b389;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px 10px 10px 10px;
 }
 </style>
