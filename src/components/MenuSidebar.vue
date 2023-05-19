@@ -12,15 +12,15 @@
       <div>
         <ul>
           <li>
-            <router-link to="/plant/:id">Obst</router-link>
+            <router-link to="/sorting">Obst</router-link>
           </li>
-          <li><router-link to="/plant/:id">Gemüse</router-link></li>
-          <li><router-link to="/plant/:id">Kräuter</router-link></li>
+          <li><router-link to="/allplants">Gemüse</router-link></li>
+          <li><router-link to="/allplants">Kräuter</router-link></li>
         </ul>
       </div>
     </details>
     <router-link to="/match">Matches</router-link>
-    <router-link to="/sorting">Biodünger</router-link>
+    <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
   </div>

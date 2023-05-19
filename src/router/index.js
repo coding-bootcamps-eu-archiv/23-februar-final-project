@@ -41,12 +41,12 @@ const routes = [
   {
     path: "/match",
     name: "matches",
-    component: () => import("../views/MatchView"),
+    component: () => import("../views/MatchView.vue"),
   },
   {
     path: "/sorting",
     name: "sorting",
-    component: () => import("../views/SingleSortView"),
+    component: () => import("../views/SingleSortView.vue"),
   },
 ];
 

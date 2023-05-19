@@ -1,27 +1,25 @@
 <template>
-  <template>
-    <section>
-      {{ plants }}
-      <h2>FRUITS</h2>
-      <div v-for="fruit in filterdFruits" :key="fruit.id">
-        <div>
-          {{ filterdFruits }}
-        </div>
+  <section class="main-grid">
+    <p>Hallo:</p>
+    <h2 class="plants">FRUITS</h2>
+    <div v-for="fruit in filterdFruits" :key="fruit.id">
+      <div>
+        {{ filterdFruits }}
       </div>
-      <h2>VEGETABLES</h2>
-      <div v-for="vegetable in filterdVegetables" :key="vegetable.id">
-        <div>
-          {{ filterdVegetables }}
-        </div>
+    </div>
+    <h2 class="plants">VEGETABLES</h2>
+    <div v-for="vegetable in filterdVegetables" :key="vegetable.id">
+      <div>
+        {{ filterdVegetables }}
       </div>
-      <h2>HERBS</h2>
-      <div v-for="herbs in filterdHerbs" :key="herbs.id">
-        <div>
-          {{ filterdHerbs }}
-        </div>
+    </div>
+    <h2 class="plants">HERBS</h2>
+    <div v-for="herbs in filterdHerbs" :key="herbs.id">
+      <div>
+        {{ filterdHerbs }}
       </div>
-    </section>
-  </template>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -33,20 +31,14 @@ export default {
   },
   computed: {
     filterdFruits() {
-      let filterdDataFruits = this.plants.filter(
-        (item) => (item.id = "40ee5b1e-093f-4d92-955b-87494fda9af5")
-      );
-      return filterdDataFruits;
+      return this.plants.filter((item) => item.friends.includes("November"));
     },
     filterdVegetables() {
-      let filterdDataVegetables = this.plants.filter(
-        (item) => (item.id = "40ee5b1e-093f-4d92-955b-87494fda9af5")
-      );
-      return filterdDataVegetables;
+      return this.plants.name;
     },
     filterdHerbs() {
       let filterdDataHerbs = this.plants.filter(
-        (item) => (item.id = "dbf7e73b-172e-4466-ba14-714cbc06a6ab")
+        (item) => (item.groupId = "dbf7e73b-172e-4466-ba14-714cbc06a6ab")
       );
       return filterdDataHerbs;
     },
@@ -67,5 +59,22 @@ export default {
         });
     },
   },
+  created() {
+    this.readDataFromApi();
+  },
 };
 </script>
+
+<style>
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: left;
+}
+
+.plants {
+  color: blue;
+  font-size: 2rem;
+}
+</style>

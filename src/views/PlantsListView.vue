@@ -1,7 +1,6 @@
 <template>
-  <section>
-    <h1>Alle Pflanzen</h1>
-    <div v-for="plant in plants" :key="plant.id" class="plants-grid">
+  <section class="plants-grid">
+    <div v-for="plant in plants" :key="plant.id">
       <div class="show-plants">
         <!-- <span>{{ plant.group.name }}</span> -->
         <span class="plant-name">{{ plant.name }}</span>
@@ -56,17 +55,18 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 10px;
 }
 .plant-name {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .plant-img {
-  border: 10px solid #42b389;
+  border: 5px solid #42b389;
   filter: drop-shadow(0 0 0.75rem #42b389);
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
   border-radius: 50%;
 }
 </style>
