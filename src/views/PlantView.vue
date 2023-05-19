@@ -1,6 +1,6 @@
 <template>
-  <!-------left------>
   <div>
+    <!-------left------>
     <section class="container-left">
       <div class="left-content">
         <img
@@ -27,7 +27,9 @@
             key="distance-image"
             alt="Distance"
           />
-          <p>{{ plant.plantDistance }}cm</p>
+
+          <p>{{ plant.plantDistance }} cm</p>
+
         </span>
 
         <span class="pharvestable">
@@ -66,14 +68,15 @@
     <section class="container-right">
       <div class="right-content">
         <h1 class="h1">{{ plant.name }}</h1>
-        <p class="info-text">
-          {{ plant.description }}
-        </p>
+
+        <p class="info-text">{{ plant.description }}</p>
+
+
         <img
           class="secound-plant-picture"
-          src="@/assets/placeholder2_SV.jpg"
           key="image"
           alt="Image"
+          :src="`background-image: url(http://localhost:3005${plant.images[1]})`"
         />
       </div>
     </section>
@@ -87,11 +90,6 @@ export default {
   data() {
     return {
       plant: {},
-      name: "",
-      directSowing: "",
-      plantDistance: 0,
-      pharvestable: "",
-      location: "",
     };
   },
   methods: {
@@ -108,9 +106,15 @@ export default {
           this.plant = plantsApi;
         });
     },
+    convertData() {
+      this.plant = this.plant.toString();
+      console.log(this.plant);
+    },
   },
+
   created() {
     this.readDataFromApi();
+    this.convertData();
   },
 };
 </script>
