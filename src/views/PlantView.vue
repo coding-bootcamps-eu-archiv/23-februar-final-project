@@ -13,7 +13,7 @@
         <span class="direct-sowing">
           <img
             type="icon"
-            src="@/assets/seeding.png"
+            src="@/assets/icons/seeding.png"
             key="seeding-image"
             alt="Seeding"
           />
@@ -23,7 +23,7 @@
         <span class="plant-distance">
           <img
             type="icon"
-            src="@/assets/distance.png"
+            src="@/assets/icons/distance.png"
             key="distance-image"
             alt="Distance"
           />
@@ -34,7 +34,7 @@
         <span class="pharvestable">
           <img
             type="icon"
-            src="@/assets/carrots.png"
+            src="@/assets/icons/carrots.png"
             key="harvest-image"
             alt="Harvest"
           />
@@ -44,7 +44,7 @@
         <span class="location">
           <img
             type="icon"
-            src="@/assets/cloudy.png"
+            src="@/assets/icons/cloudy.png"
             key="location-image"
             alt="Location"
           />
@@ -54,7 +54,7 @@
         <span class="Pflege">
           <img
             type="icon"
-            src="@/assets/plant.png"
+            src="@/assets/icons/plant.png"
             key="care-image"
             alt="Care"
           />
