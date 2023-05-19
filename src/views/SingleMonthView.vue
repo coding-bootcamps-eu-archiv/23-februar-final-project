@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="main-grid">
     <h2 class="plants">{{ currentHeadline }}</h2>
-    <div class="plants-grid">
+    <section class="plants-grid">
       <div v-for="plant in plants" :key="plant.id">
         <div class="show-plants">
           <!-- <span>{{ plant.group.name }}</span> -->
@@ -14,7 +14,7 @@
           </router-link>
         </div>
       </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -36,6 +36,23 @@ export default {
           id: "dbf7e73b-172e-4466-ba14-714cbc06a6ab",
           headline: "Kräuter",
         },
+        sowing: "",
+        care: "",
+        harvestable: "",
+        months: [
+          "Jan",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez",
+        ],
       },
     };
   },
@@ -103,9 +120,6 @@ export default {
   align-items: center;
   justify-content: left;
 }
-.plants {
-  text-align: center;
-}
 .show-plants {
   display: flex;
   flex-direction: column;
@@ -116,7 +130,6 @@ export default {
 }
 .plant-name {
   font-size: 1rem;
-  color: #42b389;
 }
 .plant-img {
   border: 5px solid #42b389;

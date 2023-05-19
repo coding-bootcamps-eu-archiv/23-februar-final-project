@@ -47,6 +47,11 @@ const routes = [
     name: "sorting",
     component: () => import("../views/SingleSortView.vue"),
   },
+  {
+    path: "/singlemonth/:group",
+    name: "singlemonth",
+    component: () => import("../views/SingleMonthView.vue"),
+  },
 ];
 
 const router = createRouter({

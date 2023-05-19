@@ -41,6 +41,23 @@ export default {
       plants: [],
       sortedPlantsByMonth: [],
       clickedMonth: false,
+      sowing: "",
+      care: "",
+      harvestable: "",
+      months: [
+        "Jan",
+        "Feb",
+        "Mär",
+        "Apr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Dez",
+      ],
     };
   },
   computed: {
@@ -55,6 +72,8 @@ export default {
         return har.harvestable;
       });
       let allMonth = [...filteredSowing, ...filteredCare, ...filterdHar];
+      console.log(allMonth);
+      console.log("TEST TEST TEST");
       return allMonth;
       // return this.sortedPlantsByMonth.push(Object.keys(allMonth));
     },
