@@ -85,9 +85,13 @@ export default {
     },
   },
   watch: {
-    "$route.params.group"() {
-      console.log("test");
-      this.readDataFromApi();
+    "$route.params.group": {
+      handler() {
+        console.log("test");
+        this.readDataFromApi();
+      },
+
+      immediate: true,
     },
   },
 };

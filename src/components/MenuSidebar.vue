@@ -43,7 +43,7 @@ export default {
       this.active = !this.active;
     },
     readDataFromApi() {
-      fetch("http://localhost:3005/plants?_expand=group")
+      fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
