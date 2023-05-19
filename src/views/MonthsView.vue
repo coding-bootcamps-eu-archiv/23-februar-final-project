@@ -39,6 +39,8 @@ export default {
   data() {
     return {
       plants: [],
+      sortedPlantsByMonth: [],
+      clickedMonth: false,
     };
   },
   computed: {
@@ -52,8 +54,9 @@ export default {
       let filterdHar = this.plants.filter((har) => {
         return har.harvestable;
       });
-      let allMonth = { ...filteredSowing, ...filteredCare, ...filterdHar };
+      let allMonth = [...filteredSowing, ...filteredCare, ...filterdHar];
       return allMonth;
+      // return this.sortedPlantsByMonth.push(Object.keys(allMonth));
     },
   },
   methods: {

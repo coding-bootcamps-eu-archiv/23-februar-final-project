@@ -44,7 +44,7 @@ const routes = [
     component: () => import("../views/MatchView.vue"),
   },
   {
-    path: "/sorting",
+    path: "/sorting/:group",
     name: "sorting",
     component: () => import("../views/SingleSortView.vue"),
   },

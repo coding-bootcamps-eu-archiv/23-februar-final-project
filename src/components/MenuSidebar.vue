@@ -12,10 +12,10 @@
       <div>
         <ul>
           <li>
-            <router-link to="/sorting">Obst</router-link>
+            <router-link to="/sorting/fruits">Obst</router-link>
           </li>
-          <li><router-link to="/allplants">Gemüse</router-link></li>
-          <li><router-link to="/allplants">Kräuter</router-link></li>
+          <li><router-link to="/sorting/vegetables">Gemüse</router-link></li>
+          <li><router-link to="/sorting/herbs">Kräuter</router-link></li>
         </ul>
       </div>
     </details>

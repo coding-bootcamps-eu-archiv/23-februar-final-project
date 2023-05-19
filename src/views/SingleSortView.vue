@@ -1,24 +1,20 @@
 <template>
   <section class="main-grid">
-    <p>Hallo:</p>
-    <h2 class="plants">FRUITS</h2>
-    <div v-for="fruit in filterdFruits" :key="fruit.id">
-      <div>
-        {{ filterdFruits }}
+    <h2 class="plants">{{ currentHeadline }}</h2>
+    <section class="plants-grid">
+      <div v-for="plant in plants" :key="plant.id">
+        <div class="show-plants">
+          <!-- <span>{{ plant.group.name }}</span> -->
+          <span class="plant-name">{{ plant.name }}</span>
+          <router-link
+            :to="{ name: 'plant', params: { id: plant.id } }"
+            class="plant-img"
+            :style="`background-image: url(http://localhost:3005${plant.images[0]})`"
+          >
+          </router-link>
+        </div>
       </div>
-    </div>
-    <h2 class="plants">VEGETABLES</h2>
-    <div v-for="vegetable in filterdVegetables" :key="vegetable.id">
-      <div>
-        {{ filterdVegetables }}
-      </div>
-    </div>
-    <h2 class="plants">HERBS</h2>
-    <div v-for="herbs in filterdHerbs" :key="herbs.id">
-      <div>
-        {{ filterdHerbs }}
-      </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -27,25 +23,54 @@ export default {
   data() {
     return {
       plants: [],
+      groups: {
+        fruits: {
+          id: "5059cf6c-e34b-4ce2-98e0-a5e4752ae59f",
+          headline: "Obst",
+        },
+        vegetables: {
+          id: "40ee5b1e-093f-4d92-955b-87494fda9af5",
+          headline: "Gemüse",
+        },
+        herbs: {
+          id: "dbf7e73b-172e-4466-ba14-714cbc06a6ab",
+          headline: "Kräuter",
+        },
+      },
     };
   },
   computed: {
-    filterdFruits() {
-      return this.plants.filter((item) => item.friends.includes("November"));
-    },
-    filterdVegetables() {
-      return this.plants.name;
-    },
-    filterdHerbs() {
-      let filterdDataHerbs = this.plants.filter(
-        (item) => (item.groupId = "dbf7e73b-172e-4466-ba14-714cbc06a6ab")
-      );
-      return filterdDataHerbs;
+    currentHeadline() {
+      const currentGroup = this.$route.params.group;
+      return this.groups[currentGroup].headline;
     },
   },
+  //   filterdFruits() {
+  //     // let newList = [];
+  //     let filterdDataFruits = this.plants.find(
+  //       (item) => (item.groupId = "5059cf6c-e34b-4ce2-98e0-a5e4752ae59f")
+  //     );
+
+  //     // filterdDataFruits.forEach((element) => {
+  //     //   newList.push(element.value);
+  //     // }); return newList;
+  //     return filterdDataFruits;
+  //   },
+  //   filterdVegetables() {
+  //     let newList = this.plants.name === "Erdbeere";
+  //     return newList;
+  //   },
+  //   filterdHerbs() {
+  //     return this.plants.filter((item) => item.friends.includes("Tomate"));
+  //   },
+
   methods: {
     readDataFromApi() {
-      fetch("http://localhost:3005/plants?_expand=group")
+      const currentGroup = this.$route.params.group;
+      fetch(
+        "http://localhost:3005/plants?_expand=group&groupId=" +
+          this.groups[currentGroup].id
+      )
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -59,22 +84,38 @@ export default {
         });
     },
   },
-  created() {
-    this.readDataFromApi();
+  watch: {
+    "$route.params.group"() {
+      console.log("test");
+      this.readDataFromApi();
+    },
   },
 };
 </script>
-
-<style>
-.main-grid {
+<style scoped>
+.plants-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: left;
 }
-
-.plants {
-  color: blue;
-  font-size: 2rem;
+.show-plants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+.plant-name {
+  font-size: 1rem;
+}
+.plant-img {
+  border: 5px solid #42b389;
+  filter: drop-shadow(0 0 0.75rem #42b389);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 50%;
 }
 </style>
