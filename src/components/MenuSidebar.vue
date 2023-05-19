@@ -12,10 +12,10 @@
       <div>
         <ul>
           <li>
-            <router-link to="/plant/:id">Obst</router-link>
+            <router-link to="/sorting/fruits">Obst</router-link>
           </li>
-          <li><router-link to="/plant/:id">Gemüse</router-link></li>
-          <li><router-link to="/plant/:id">Kräuter</router-link></li>
+          <li><router-link to="/sorting/vegetables">Gemüse</router-link></li>
+          <li><router-link to="/sorting/herbs">Kräuter</router-link></li>
         </ul>
       </div>
     </details>
@@ -41,7 +41,6 @@ export default {
   methods: {
     handleClick() {
       this.active = !this.active;
-      console.log(this.active);
     },
     readDataFromApi() {
       fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
