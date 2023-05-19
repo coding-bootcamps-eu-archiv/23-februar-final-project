@@ -74,7 +74,7 @@
           class="secound-plant-picture"
           key="image"
           alt="Image"
-          :src="`background-image: url(http://localhost:3005${plant.images[1]})`"
+          :src="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[1]})`"
         />
       </div>
     </section>

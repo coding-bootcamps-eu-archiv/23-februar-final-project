@@ -19,7 +19,7 @@
                 <router-link
                   :to="{ name: 'plant', params: { id: plant.id } }"
                   class="plant-img"
-                  :style="`background-image: url(http://localhost:3005${plant.images[0]})`"
+                  :style="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[0]})`"
                 >
                 </router-link>
               </div>

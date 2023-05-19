@@ -9,7 +9,7 @@
           <router-link
             :to="{ name: 'plant', params: { id: plant.id } }"
             class="plant-img"
-            :style="`background-image: url(http://localhost:3005${plant.images[0]})`"
+            :style="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[0]})`"
           >
           </router-link>
         </div>
@@ -68,7 +68,7 @@ export default {
     readDataFromApi() {
       const currentGroup = this.$route.params.group;
       fetch(
-        "http://localhost:3005/plants?_expand=group&groupId=" +
+        `${process.env.VUE_APP_API_URL}/plants?_expand=group&groupId=` +
           this.groups[currentGroup].id
       )
         .then((response) => {
