@@ -43,6 +43,11 @@ const routes = [
     name: "matches",
     component: () => import("../views/MatchView"),
   },
+  {
+    path: "/sorting",
+    name: "sorting",
+    component: () => import("../views/SingleSortView"),
+  },
 ];
 
 const router = createRouter({

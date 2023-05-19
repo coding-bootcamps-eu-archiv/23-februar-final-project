@@ -20,7 +20,7 @@
       </div>
     </details>
     <router-link to="/match">Matches</router-link>
-    <router-link to="/biocompost">Biodünger</router-link>
+    <router-link to="/sorting">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
   </div>
@@ -40,7 +40,6 @@ export default {
   methods: {
     handleClick() {
       this.active = !this.active;
-      console.log(this.active);
     },
     readDataFromApi() {
       fetch("http://localhost:3005/plants?_expand=group")

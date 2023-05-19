@@ -35,7 +35,6 @@ export default {
         })
         .then((plantsApi) => {
           this.plants = plantsApi;
-          // console.log(this.plants);
         });
     },
   },
