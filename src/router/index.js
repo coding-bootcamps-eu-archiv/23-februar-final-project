@@ -24,7 +24,7 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/months/:month",
+    path: "/months",
     name: "months",
     component: () => import("../views/MonthsView.vue"),
   },
@@ -47,6 +47,11 @@ const routes = [
     path: "/sorting/:group",
     name: "sorting",
     component: () => import("../views/SingleSortView.vue"),
+  },
+  {
+    path: "/singlemonth/:month",
+    name: "singlemonth",
+    component: () => import("../views/SingleMonthView.vue"),
   },
 ];
 

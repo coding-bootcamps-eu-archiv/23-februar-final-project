@@ -18,11 +18,17 @@ import LayoutFooter from "@/components/LayoutFooter.vue";
 
 import "./assets/styles.css";
 
+import { useMainStore } from "@/store/MainStore.js";
+
 export default {
   name: "App",
   components: {
     LayoutHeader,
     LayoutFooter,
+  },
+  setup() {
+    const store = useMainStore();
+    store.getQuickLinkData();
   },
 };
 </script>

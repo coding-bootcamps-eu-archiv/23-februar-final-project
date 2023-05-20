@@ -12,6 +12,9 @@
       <div>
         <ul>
           <li>
+            <router-link to="/allplants">Alle</router-link>
+          </li>
+          <li>
             <router-link to="/sorting/fruits">Obst</router-link>
           </li>
           <li><router-link to="/sorting/vegetables">Gemüse</router-link></li>
@@ -24,6 +27,7 @@
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
+    <router-link to="/months">TEST</router-link>
   </div>
 
   <button class="openbtn" @click="handleClick">&#9776;</button>
@@ -47,6 +51,10 @@ export default {
   methods: {
     handleClick() {
       this.store.menuActive = !this.store.menuActive;
+    },
+
+    closeSidebarMenu() {
+      this.isOpen = false;
     },
     readDataFromApi() {
       fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
