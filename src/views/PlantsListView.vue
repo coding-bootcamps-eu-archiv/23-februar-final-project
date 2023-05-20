@@ -60,6 +60,7 @@ export default {
 }
 .plant-name {
   font-size: 1rem;
+  color: #42b389;
 }
 .plant-img {
   border: 5px solid #42b389;

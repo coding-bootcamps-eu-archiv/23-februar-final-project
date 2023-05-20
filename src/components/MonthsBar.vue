@@ -1,5 +1,10 @@
 <template>
-  <section class="months-list">
+  <section
+    class="months-list"
+    :style="{
+      background: active ? '#ad4731' : '#fa8369',
+    }"
+  >
     <button class="tab" @click.prevent="handleClick('Januar')">Jan</button>
     <button class="tab" @click.prevent="handleClick('Februar')">Feb</button>
     <button class="tab" @click.prevent="handleClick('März')">Mär</button>
@@ -30,7 +35,10 @@ export default {
   methods: {
     handleClick(clickedMonth) {
       this.active = !this.active;
-      this.$router.push({ name: "months", params: { month: clickedMonth } });
+      this.$router.push({
+        name: "singlemonth",
+        params: { month: clickedMonth },
+      });
       this.$emit("button-click");
       console.log(this.active);
     },

@@ -1,7 +1,7 @@
 <template>
-  <section class="main-grid">
+  <section>
     <h2 class="plants">{{ currentHeadline }}</h2>
-    <section class="plants-grid">
+    <div class="plants-grid">
       <div v-for="plant in plants" :key="plant.id">
         <div class="show-plants">
           <!-- <span>{{ plant.group.name }}</span> -->
@@ -14,7 +14,7 @@
           </router-link>
         </div>
       </div>
-    </section>
+    </div>
   </section>
 </template>
 
@@ -103,6 +103,9 @@ export default {
   align-items: center;
   justify-content: left;
 }
+.plants {
+  text-align: center;
+}
 .show-plants {
   display: flex;
   flex-direction: column;
@@ -113,6 +116,7 @@ export default {
 }
 .plant-name {
   font-size: 1rem;
+  color: #42b389;
 }
 .plant-img {
   border: 5px solid #42b389;
