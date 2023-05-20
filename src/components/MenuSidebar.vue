@@ -2,7 +2,7 @@
   <div
     class="side-menu"
     :style="{
-      width: active ? '250px' : '0px',
+      width: store.menuActive ? '250px' : '0px',
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
@@ -30,17 +30,23 @@
 </template>
 
 <script>
+import { useMainStore } from "@/store/MainStore.js";
 export default {
   emits: ["button-click"],
+  setup() {
+    const store = useMainStore();
+    return {
+      store,
+    };
+  },
   data() {
     return {
       plants: [],
-      active: false,
     };
   },
   methods: {
     handleClick() {
-      this.active = !this.active;
+      this.store.menuActive = !this.store.menuActive;
     },
     readDataFromApi() {
       fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)

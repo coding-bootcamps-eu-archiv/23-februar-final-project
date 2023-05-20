@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import { useMainStore } from "@/store/MainStore.js";
 
 const routes = [
   {
@@ -54,4 +55,8 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach(() => {
+  const store = useMainStore();
+  store.menuActive = false;
+});
 export default router;
