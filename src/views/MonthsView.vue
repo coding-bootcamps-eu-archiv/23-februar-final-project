@@ -33,54 +33,63 @@
     </div>
   </section>
 </template>
-
 <script>
 export default {
   data() {
     return {
       plants: [],
-      sortedPlantsByMonth: [],
-      clickedMonth: false,
-      sowing: "",
-      care: "",
-      harvestable: "",
-      months: [
-        "Jan",
-        "Feb",
-        "Mär",
-        "Apr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Okt",
-        "Nov",
-        "Dez",
-      ],
+      groups: {
+        fruits: {
+          id: "5059cf6c-e34b-4ce2-98e0-a5e4752ae59f",
+          headline: "Obst",
+        },
+        vegetables: {
+          id: "40ee5b1e-093f-4d92-955b-87494fda9af5",
+          headline: "Gemüse",
+        },
+        herbs: {
+          id: "dbf7e73b-172e-4466-ba14-714cbc06a6ab",
+          headline: "Kräuter",
+        },
+        sowing: "",
+        care: "",
+        harvestable: "",
+      },
     };
   },
-  computed: {
-    filteredStories() {
-      let filteredSowing = this.plants.filter((sowing) => {
-        return sowing.directSowing;
-      });
-      let filteredCare = this.plants.filter((care) => {
-        return care.care;
-      });
-      let filterdHar = this.plants.filter((har) => {
-        return har.harvestable;
-      });
-      let allMonth = [...filteredSowing, ...filteredCare, ...filterdHar];
-      console.log(allMonth);
-      console.log("TEST TEST TEST");
-      return allMonth;
-      // return this.sortedPlantsByMonth.push(Object.keys(allMonth));
-    },
-  },
+  // computed: {
+  //   currentHeadline() {
+  //     const currentMonth = this.$route.params.month;
+  //     return this.months[currentMonth];
+  //   },
+  // },
+  // //   filterdFruits() {
+  //     // let newList = [];
+  //     let filterdDataFruits = this.plants.find(
+  //       (item) => (item.groupId = "5059cf6c-e34b-4ce2-98e0-a5e4752ae59f")
+  //     );
+
+  //     // filterdDataFruits.forEach((element) => {
+  //     //   newList.push(element.value);
+  //     // }); return newList;
+  //     return filterdDataFruits;
+  //   },
+  //   filterdVegetables() {
+  //     let newList = this.plants.name === "Erdbeere";
+  //     return newList;
+  //   },
+  //   filterdHerbs() {
+  //     return this.plants.filter((item) => item.friends.includes("Tomate"));
+  //   },
+
   methods: {
     readDataFromApi() {
-      fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
+      // const currentMonth = this.$route.params.month;
+      fetch(
+        `${process.env.VUE_APP_API_URL}/plants?directSowing_like=${this.$route.params.month}&harvestable_like=${this.$route.params.month}`
+        //Doppelte ssuche nach hervesable und directSowing
+        // this.$route.params.month
+      )
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -94,8 +103,15 @@ export default {
         });
     },
   },
-  created() {
-    this.readDataFromApi();
+  watch: {
+    "$route.params.month": {
+      handler() {
+        console.log("test");
+        this.readDataFromApi();
+      },
+
+      immediate: true,
+    },
   },
 };
 </script>
@@ -108,7 +124,6 @@ export default {
   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
   width: 100%;
 }
-
 .table-item__table-row:hover button {
   opacity: 1;
 }

@@ -87,7 +87,7 @@ export default {
   components: {},
   data() {
     return {
-      plant: {},
+      plant: [],
     };
   },
   methods: {

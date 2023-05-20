@@ -23,7 +23,7 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/months/:month",
+    path: "/months",
     name: "months",
     component: () => import("../views/MonthsView.vue"),
   },
@@ -48,7 +48,7 @@ const routes = [
     component: () => import("../views/SingleSortView.vue"),
   },
   {
-    path: "/singlemonth/:group",
+    path: "/singlemonth/:month",
     name: "singlemonth",
     component: () => import("../views/SingleMonthView.vue"),
   },

@@ -1,7 +1,7 @@
 <template>
-  <section class="main-grid">
-    <h2 class="plants">{{ currentHeadline }}</h2>
-    <section class="plants-grid">
+  <section>
+    <h2>In diesem Monat kannst du säen:</h2>
+    <div class="plants-grid">
       <div v-for="plant in plants" :key="plant.id">
         <div class="show-plants">
           <!-- <span>{{ plant.group.name }}</span> -->
@@ -14,7 +14,7 @@
           </router-link>
         </div>
       </div>
-    </section>
+    </div>
   </section>
 </template>
 
@@ -39,30 +39,16 @@ export default {
         sowing: "",
         care: "",
         harvestable: "",
-        months: [
-          "Jan",
-          "Feb",
-          "Mär",
-          "Apr",
-          "Mai",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Okt",
-          "Nov",
-          "Dez",
-        ],
       },
     };
   },
-  computed: {
-    currentHeadline() {
-      const currentGroup = this.$route.params.group;
-      return this.groups[currentGroup].headline;
-    },
-  },
-  //   filterdFruits() {
+  // computed: {
+  //   currentHeadline() {
+  //     const currentMonth = this.$route.params.month;
+  //     return this.months[currentMonth];
+  //   },
+  // },
+  // //   filterdFruits() {
   //     // let newList = [];
   //     let filterdDataFruits = this.plants.find(
   //       (item) => (item.groupId = "5059cf6c-e34b-4ce2-98e0-a5e4752ae59f")
@@ -83,10 +69,11 @@ export default {
 
   methods: {
     readDataFromApi() {
-      const currentGroup = this.$route.params.group;
+      // const currentMonth = this.$route.params.month;
       fetch(
-        `${process.env.VUE_APP_API_URL}/plants?_expand=group&groupId=` +
-          this.groups[currentGroup].id
+        `${process.env.VUE_APP_API_URL}/plants?directSowing_like=${this.$route.params.month}`
+        // &harvestable_like=${this.$route.params.month}
+        // this.$route.params.month
       )
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
@@ -102,7 +89,7 @@ export default {
     },
   },
   watch: {
-    "$route.params.group": {
+    "$route.params.month": {
       handler() {
         console.log("test");
         this.readDataFromApi();
@@ -113,12 +100,16 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .plants-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+}
+h2 {
+  text-align: center;
 }
 .show-plants {
   display: flex;
@@ -130,6 +121,7 @@ export default {
 }
 .plant-name {
   font-size: 1rem;
+  color: #42b389;
 }
 .plant-img {
   border: 5px solid #42b389;
