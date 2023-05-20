@@ -1,72 +1,29 @@
-<!--<template>
-  <section>
-    <input type="text" v-model="currentSearch" placeholder="Search plant..." />
-    <div v-for="plant in plants" :key="plant.id">
-      <router-link :to="{ name: 'plant', params: { id: plant.id } }">
-        {{ currentSearch }}</router-link
-      >
-    </div>
-    <span></span>
-  </section>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      currentSearch: "",
-      plants: [],
-    };
-  },
-  methods: {
-    readDataFromApi() {
-      fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=name`)
-        .then((response) => {
-          if (response.status >= 200 && response.status <= 299) {
-            return response.json();
-          } else {
-            console.log("ERROR");
-          }
-        })
-        .then((plantsApi) => {
-          this.plants = plantsApi;
-          console.log(plantsApi);
-        });
-    },
-    filteredPlant() {
-      return this.plants.filter((plant) => {
-        plant.name.find(this.currentSearch);
-      });
-    },
-  },
-
-  created() {
-    this.readDataFromApi();
-  },
-};
-</script>-->
-
 <template>
   <section>
-    <div class="search-plant">
-      <input
-        type="text"
-        class="search-bar"
-        v-model="query"
-        @keypress="fetchPlant"
-      />
-    </div>
+    <select id="quick-link" @change="fetchPlant">
+      <option value="">Bitte wählen</option>
+      <option v-for="link in store.quickLinks" :key="link.id" :value="link.id">
+        {{ link.name }}
+      </option>
+    </select>
+
     <div v-for="plant in plants" :key="plant">
       <router-link :to="{ name: 'plant', params: { id: plant } }">
-        {{ currentSearch }}</router-link
-      >
+        {{
+      }}</router-link>
     </div>
   </section>
 </template>
 
 <script>
+import { useMainStore } from "@/store/MainStore.js";
+
 export default {
   name: "filterPlants",
+  setup() {
+    const store = useMainStore();
+    return { store };
+  },
   data() {
     return {
       url_base: "https://23-februar.api.cbe.uber.space/",
@@ -76,13 +33,8 @@ export default {
   },
   methods: {
     fetchPlant(e) {
-      if (e.key == "Enter") {
-        fetch(`${this.url_base}plants?name_like=${this.query}`)
-          .then((res) => {
-            return res.json();
-          })
-          .then(this.filteredPlants);
-      }
+      this.$router.push({ name: "plant", params: { id: e.target.value } });
+      console.log(e.target.value);
     },
     filteredPlants(results) {
       this.plant = results.name;
