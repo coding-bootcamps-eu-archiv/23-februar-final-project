@@ -13,6 +13,7 @@
         id="first-plant"
         name="first-plant"
         placeholder="Gib eine Pflanze ein"
+        v-model="query"
       />
     </div>
     <div class="current-match-picture">
@@ -27,6 +28,7 @@
         id="secound-plant"
         name="secound-plant"
         placeholder="Gib eine Pflanze ein"
+        v-model="query"
       />
     </div>
     <BaseButton @click="show(matchImages)">Hot or Not</BaseButton>
@@ -48,12 +50,27 @@ export default {
           startImage: "@/assets/Hintergrund.jpg",
           hotImage: "@/assets/daisies-g946f9165c_1920.jpg",
           notImage: "@assets/mask-g1307a3e45_1920.jpg",
+          url_base: "https://23-februar.api.cbe.uber.space/",
+          query: "",
+          plant: {},
         },
       ],
     };
   },
-  mounted() {
-    this.matchImages;
+  methods: {
+    fetchPlant(e) {
+      if (e.key == "Enter") {
+        fetch(`${this.url_base}plants?name_like=${this.query}`)
+          .then((res) => {
+            return res.json();
+          })
+          .then(this.filteredPlants);
+      }
+    },
+    filteredPlants(results) {
+      this.plant = results.name;
+      console.log(results);
+    },
   },
 };
 </script>
