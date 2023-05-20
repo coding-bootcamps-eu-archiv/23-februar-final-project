@@ -9,7 +9,7 @@
           @keypress="fetchWeather"
         />
       </div>
-      {{ typeof weather.main !== undefined }}
+
       <div class="weather-container" v-if="typeof weather.main !== 'undefined'">
         <div class="location-content">
           <div class="location">

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div v-if="plant">
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
         <img
           class="first-plant-picture"
-          src="@/assets/placeholder1_SV.jpg"
+          :src="`https://23-februar.api.cbe.uber.space${plant.images[0]}`"
           key="image"
           alt="Image"
         />
@@ -17,7 +17,7 @@
             key="seeding-image"
             alt="Seeding"
           />
-          <p>{{ plant.directSowing }}</p>
+          <p>{{ plant.directSowing.toString() }}</p>
         </span>
 
         <span class="plant-distance">
@@ -38,7 +38,7 @@
             key="harvest-image"
             alt="Harvest"
           />
-          <p>{{ plant.harvestable }}</p>
+          <p>{{ plant.harvestable.toString() }}</p>
         </span>
 
         <span class="location">
@@ -48,7 +48,7 @@
             key="location-image"
             alt="Location"
           />
-          <p>{{ plant.location }}</p>
+          <p>{{ plant.location.toString() }}</p>
         </span>
 
         <span class="Pflege">
@@ -58,7 +58,7 @@
             key="care-image"
             alt="Care"
           />
-          <p>{{ plant.care }}</p>
+          <p>{{ plant.care.toString() }}</p>
         </span>
       </div>
     </section>
@@ -67,14 +67,14 @@
     <section class="container-right">
       <div class="right-content">
         <h1 class="h1">{{ plant.name }}</h1>
-
-        <p class="info-text">{{ plant.description }}</p>
-
+        <div class="info-text">
+          <p>{{ plant.description }}</p>
+        </div>
         <img
           class="secound-plant-picture"
           key="image"
           alt="Image"
-          :src="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[1]})`"
+          :src="`https://23-februar.api.cbe.uber.space${plant.images[1]}`"
         />
       </div>
     </section>
@@ -87,7 +87,7 @@ export default {
   components: {},
   data() {
     return {
-      plant: [],
+      plant: null,
     };
   },
   methods: {
@@ -104,15 +104,10 @@ export default {
           this.plant = plantsApi;
         });
     },
-    convertData() {
-      this.plant = this.plant.toString();
-      console.log(this.plant);
-    },
   },
 
   created() {
     this.readDataFromApi();
-    this.convertData();
   },
 };
 </script>
@@ -184,6 +179,13 @@ img {
 }
 
 .info-text {
+  background-color: #42b389;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px 10px 10px 10px;
   padding: 1.5vw;
+  background-color: var(--primay-dark);
 }
 </style>
