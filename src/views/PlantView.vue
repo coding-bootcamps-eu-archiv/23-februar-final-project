@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="plant">
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -87,7 +87,7 @@ export default {
   components: {},
   data() {
     return {
-      plant: {},
+      plant: null,
     };
   },
   methods: {
