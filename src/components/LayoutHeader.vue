@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style scoped sc ItemInputSearchoped>
+<style scoped>
 h1 {
   margin-block: 0;
 }
