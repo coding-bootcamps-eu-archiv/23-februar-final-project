@@ -2,7 +2,7 @@
   <div
     class="side-menu"
     :style="{
-      width: active ? '250px' : '0px',
+      width: store.menuActive ? '250px' : '0px',
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
@@ -12,10 +12,13 @@
       <div>
         <ul>
           <li>
-            <router-link to="/plant/:id">Obst</router-link>
+            <router-link to="/allplants">Alle</router-link>
           </li>
-          <li><router-link to="/plant/:id">Gemüse</router-link></li>
-          <li><router-link to="/plant/:id">Kräuter</router-link></li>
+          <li>
+            <router-link to="/sorting/fruits">Obst</router-link>
+          </li>
+          <li><router-link to="/sorting/vegetables">Gemüse</router-link></li>
+          <li><router-link to="/sorting/herbs">Kräuter</router-link></li>
         </ul>
       </div>
     </details>
@@ -24,27 +27,37 @@
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
+    <router-link to="/months">TEST</router-link>
   </div>
 
   <button class="openbtn" @click="handleClick">&#9776;</button>
 </template>
 
 <script>
+import { useMainStore } from "@/store/MainStore.js";
 export default {
   emits: ["button-click"],
+  setup() {
+    const store = useMainStore();
+    return {
+      store,
+    };
+  },
   data() {
     return {
       plants: [],
-      active: false,
     };
   },
   methods: {
     handleClick() {
-      this.active = !this.active;
-      console.log(this.active);
+      this.store.menuActive = !this.store.menuActive;
+    },
+
+    closeSidebarMenu() {
+      this.isOpen = false;
     },
     readDataFromApi() {
-      fetch("http://localhost:3005/plants?_expand=group")
+      fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();

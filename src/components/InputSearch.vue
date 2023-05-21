@@ -1,43 +1,61 @@
 <template>
   <section>
-    <input type="text" v-model="currentSearch" placeholder="Search plant..." />
-    <div v-for="plant in plants" :key="plant.id">
-      <router-link :to="{ name: 'plant', params: { id: plant.id } }">
-        {{ currentSearch }}</router-link
-      >
-    </div>
-    <span></span>
+    <select id="quick-link" @change="fetchPlant">
+      <option value="">Schnellsuche</option>
+      <option v-for="link in store.quickLinks" :key="link.id" :value="link.id">
+        {{ link.name }}
+      </option>
+    </select>
   </section>
 </template>
 
 <script>
+import { useMainStore } from "@/store/MainStore.js";
+
 export default {
+  name: "filterPlants",
+  setup() {
+    const store = useMainStore();
+    return { store };
+  },
   data() {
     return {
-      currentSearch: "",
-      plants: [],
+      url_base: "https://23-februar.api.cbe.uber.space/",
+      query: "",
+      plant: {},
     };
   },
   methods: {
-    readDataFromApi() {
-      fetch("http://localhost:3005/plants?_expand=group")
-        .then((response) => {
-          if (response.status >= 200 && response.status <= 299) {
-            return response.json();
-          } else {
-            console.log("ERROR");
-          }
-        })
-        .then((plantsApi) => {
-          this.plants = plantsApi;
-        });
+    fetchPlant(e) {
+      this.$router.push({ name: "plant", params: { id: e.target.value } });
+      console.log(e.target.value);
     },
-    filteredPlant() {
-      return this.plants.filter((plant) => plant.name.find(this.currentSearch));
+    filteredPlants(results) {
+      this.plant = results.name;
+      console.log(results);
     },
-  },
-  created() {
-    this.readDataFromApi();
   },
 };
 </script>
+
+<style scoped>
+#quick-link {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+
+:focus {
+  border: 3px solid var(--primary-middle);
+  outline: none;
+}
+</style>

@@ -9,9 +9,6 @@
           </router-link>
         </nav>
       </div>
-      <div class="input-header">
-        <input type="search" results="5" placeholder="Search..." />
-      </div>
       <p class="header-text">HERBA URBANA</p>
     </div>
     <MonthsBar />
@@ -69,7 +66,7 @@ export default {
 
 .home-logo-wrapper img.home-logo {
   height: auto;
-  width: min(50%, 150px);
+  width: min(80%, 150px);
 }
 
 .header__section {
