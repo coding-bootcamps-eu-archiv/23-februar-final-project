@@ -28,7 +28,7 @@
               <li>Kompost</li>
             </ul>
             Lass dich inspirieren und verziechte auf Chemikalien.. denn "Du bist
-            was du isst.", sagte mal der detuche Pghilosph Ludwig Feuerbach!
+            was du isst." , sagte mal der detuche Pghilosph Ludwig Feuerbach!
           </div>
         </article>
       </section>
