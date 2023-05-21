@@ -10,6 +10,11 @@
         <router-link to="/contact" class="link-footer">Kontakt</router-link>
       </nav>
     </div>
+    <div>
+      <nav>
+        <router-link to="/impressum" class="link-footer">Impressum</router-link>
+      </nav>
+    </div>
   </footer>
 </template>
 

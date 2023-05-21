@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section class="contact-content contact">
     <div>
       <h2>Raphaela Becker</h2>
       <p>raphaela.becker@posteo.de</p>
@@ -8,7 +8,7 @@
           <img
             class="github-logo"
             key="github-logo "
-            src="@/assets/github-mark.png"
+            src="@/assets/github-mark-white.png"
             alt="Logo"
           />
         </div>
@@ -22,7 +22,7 @@
           <img
             class="github-logo"
             key="github-logo "
-            src="@/assets/github-mark.png"
+            src="@/assets/github-mark-white.png"
             alt="Logo"
           />
         </div>
@@ -35,18 +35,30 @@
 .contact {
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: left;
   row-gap: 10px;
+  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
 }
 .github-logo {
   height: 3rem;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 3px;
+}
+h2,
+p {
+  color: white;
+}
+.contact-content {
+  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
 }
 </style>

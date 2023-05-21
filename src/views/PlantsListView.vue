@@ -1,14 +1,14 @@
 <template>
-  <section>
-    <h1>Alle Pflanzen</h1>
-    <div v-for="plant in plants" :key="plant.id" class="plants-grid">
+  <div class="input-search"><InputSearch /></div>
+  <section class="plants-grid">
+    <div v-for="plant in plants" :key="plant.id">
       <div class="show-plants">
         <!-- <span>{{ plant.group.name }}</span> -->
         <span class="plant-name">{{ plant.name }}</span>
         <router-link
           :to="{ name: 'plant', params: { id: plant.id } }"
           class="plant-img"
-          :style="`background-image: url(http://localhost:3005${plant.images[0]})`"
+          :style="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[0]})`"
         >
         </router-link>
       </div>
@@ -17,7 +17,12 @@
 </template>
 
 <script>
+import InputSearch from "@/components/InputSearch.vue";
+
 export default {
+  components: {
+    InputSearch,
+  },
   data() {
     return {
       plants: [],
@@ -25,7 +30,7 @@ export default {
   },
   methods: {
     readDataFromApi() {
-      fetch("http://localhost:3005/plants?_expand=group")
+      fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return response.json();
@@ -35,7 +40,6 @@ export default {
         })
         .then((plantsApi) => {
           this.plants = plantsApi;
-          // console.log(this.plants);
         });
     },
   },
@@ -46,6 +50,10 @@ export default {
 </script>
 
 <style scoped>
+.input-search {
+  text-align: right;
+  padding: 20px;
+}
 .plants-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -57,17 +65,19 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 10px;
 }
 .plant-name {
-  font-size: 2rem;
+  font-size: 1rem;
+  color: #42b389;
 }
 .plant-img {
-  border: 10px solid #42b389;
+  border: 5px solid #42b389;
   filter: drop-shadow(0 0 0.75rem #42b389);
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
   border-radius: 50%;
 }
 </style>

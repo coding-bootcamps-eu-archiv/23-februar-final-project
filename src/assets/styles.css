@@ -1,9 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --primary: #77facb;
   --primary-middle: #24ffaf;
   --primary-dark: #42b389;
   --secondary-dark: #ad4731;
   --secondary: #fa8369;
+  --s-font: 1rem;
+  --font-primary: black;
+  --font-secondary: white;
+  --p-dark: var(--font-primary);
+  --p-light: var(--font-secondary);
 }
 
 html,
@@ -16,30 +27,6 @@ html,
 button,
 input {
   font-family: "montserrat-text";
-}
-
-input {
-  border: 3px solid var(--primary-dark);
-  border-radius: 3px;
-  box-shadow: 3px 3px 3px grey;
-  height: 25px;
-  line-height: normal;
-  color: #282828;
-  display: block;
-  width: 100%;
-
-  user-select: auto;
-  font-size: 12px;
-  padding: 0 6px;
-  padding-left: 12px;
-}
-:focus {
-  border: 3px solid var(--primary-middle);
-  outline: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
