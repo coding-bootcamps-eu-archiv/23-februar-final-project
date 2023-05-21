@@ -18,7 +18,7 @@
               key="seeding-image"
               alt="Seeding"
             />
-            <p>{{ plant.directSowing.toString() }}</p>
+            <p>{{ plant.directSowing.join(", ") }}</p>
           </span>
 
           <span class="plant-distance">
@@ -41,7 +41,7 @@
               key="harvest-image"
               alt="Harvest"
             />
-            <p>{{ plant.harvestable.toString() }}</p>
+            <p>{{ plant.harvestable.join(", ") }}</p>
           </span>
 
           <span class="location">
