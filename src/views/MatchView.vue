@@ -14,8 +14,8 @@
         id="first-plant"
         name="first-plant"
         placeholder="Gib eine Pflanze ein"
-        v-model="query"
-      /> -->
+        v-model="query1"
+      />
     </div>
     <div class="current-match-picture">
       <div v-if="value === undefined">{{ matchImages.startImage }}</div>
@@ -30,8 +30,8 @@
         id="secound-plant"
         name="secound-plant"
         placeholder="Gib eine Pflanze ein"
-        v-model="query"
-      /> -->
+        v-model="query2"
+      />
     </div>
     <BaseButton @click="show(matchImages)">Hot or Not</BaseButton>
   </section>
@@ -56,8 +56,10 @@ export default {
           hotImage: "@/assets/daisies-g946f9165c_1920.jpg",
           notImage: "@assets/mask-g1307a3e45_1920.jpg",
           url_base: "https://23-februar.api.cbe.uber.space/",
-          query: "",
-          plant: {},
+          query1: "",
+          query2: "",
+          plant: [],
+          match: false,
         },
       ],
     };
@@ -66,7 +68,9 @@ export default {
     fetchPlant(e) {
       // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
       if (e.key == "Enter") {
-        fetch(`${this.url_base}plants?name_like=${this.query}`)
+        fetch(
+          `${this.url_base}plants?name_like=${this.query1}&friends_like=${this.query2}`
+        )
           .then((res) => {
             return res.json();
           })
@@ -76,6 +80,9 @@ export default {
     filteredPlants(results) {
       this.plant = results.name;
       console.log(results);
+    },
+    hotOrNot() {
+      this.match = this.plant[0].friends.includes(this.query2);
     },
   },
 };
