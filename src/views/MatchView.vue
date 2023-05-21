@@ -80,3 +80,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#quick-link {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+</style>
