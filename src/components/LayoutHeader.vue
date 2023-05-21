@@ -9,9 +9,7 @@
           </router-link>
         </nav>
       </div>
-      <div class="input-header">
-        <input type="search" results="5" placeholder="Search..." />
-      </div>
+      <div class="input-header"></div>
       <h1 class="header-text">HERBA URBANA</h1>
     </div>
     <MonthsBar />
@@ -35,7 +33,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped sc ItemInputSearchoped>
 h1 {
   margin-block: 0;
 }
