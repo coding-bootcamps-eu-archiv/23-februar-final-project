@@ -8,13 +8,14 @@
     </p>
     <div>
       <label for="first-plant"></label>
-      <input
+      <InputSearch />
+      <!-- <input
         type="text"
         id="first-plant"
         name="first-plant"
         placeholder="Gib eine Pflanze ein"
         v-model="query"
-      />
+      /> -->
     </div>
     <div class="current-match-picture">
       <div v-if="value === undefined">{{ matchImages.startImage }}</div>
@@ -23,13 +24,14 @@
     </div>
     <div>
       <label for="secound-plant"></label>
-      <input
+      <InputSearch />
+      <!-- <input
         type="text"
         id="secound-plant"
         name="secound-plant"
         placeholder="Gib eine Pflanze ein"
         v-model="query"
-      />
+      /> -->
     </div>
     <BaseButton @click="show(matchImages)">Hot or Not</BaseButton>
   </section>
@@ -38,10 +40,13 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 
+import InputSearch from "@/components/InputSearch.vue";
+
 export default {
   name: "MatchView",
   components: {
     BaseButton,
+    InputSearch,
   },
   data() {
     return {
@@ -59,6 +64,7 @@ export default {
   },
   methods: {
     fetchPlant(e) {
+      // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
       if (e.key == "Enter") {
         fetch(`${this.url_base}plants?name_like=${this.query}`)
           .then((res) => {

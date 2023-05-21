@@ -43,3 +43,18 @@ export default {
   },
 };
 </script>
+
+<style>
+#quick-link {
+  font-family: sans-serif;
+  border: 3px solid var(--primary-dark);
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px grey;
+  height: 25px;
+  line-height: normal;
+  color: #282828;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 6px;
+}
+</style>

@@ -10,6 +10,7 @@
         alt="Image"
       />
     </div>
+    <InputSearch />
   </section>
 </template>
 

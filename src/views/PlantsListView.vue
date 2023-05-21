@@ -1,4 +1,5 @@
 <template>
+  <div class="input-search"><InputSearch /></div>
   <section class="plants-grid">
     <div v-for="plant in plants" :key="plant.id">
       <div class="show-plants">
@@ -16,7 +17,12 @@
 </template>
 
 <script>
+import InputSearch from "@/components/InputSearch.vue";
+
 export default {
+  components: {
+    InputSearch,
+  },
   data() {
     return {
       plants: [],
@@ -44,6 +50,10 @@ export default {
 </script>
 
 <style scoped>
+.input-search {
+  text-align: right;
+  padding: 20px;
+}
 .plants-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
