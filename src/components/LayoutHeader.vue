@@ -9,6 +9,7 @@
           </router-link>
         </nav>
       </div>
+
       <p class="header-text">HERBA URBANA</p>
     </div>
     <MonthsBar />
