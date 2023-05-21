@@ -1,7 +1,7 @@
 <template>
   <section class="contact">
     <div>
-      <h2>Raphaela</h2>
+      <h2>Raphaela Becker</h2>
       <p>raphaela.becker@posteo.de</p>
       <a href="https://github.com/RaphaelaBecker">
         <div class="home-logo">

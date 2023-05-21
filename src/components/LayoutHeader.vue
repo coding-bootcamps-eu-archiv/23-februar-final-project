@@ -12,7 +12,7 @@
       <div class="input-header">
         <input type="search" results="5" placeholder="Search..." />
       </div>
-      <h1 class="header-text">HERBA URBANA</h1>
+      <p class="header-text">HERBA URBANA</p>
     </div>
     <MonthsBar />
   </div>
@@ -36,8 +36,14 @@ export default {
 </script>
 
 <style scoped>
-h1 {
+.header-text {
   margin-block: 0;
+
+  color: var(--secondary);
+  font-family: "denseletters";
+  font-size: 45px;
+  text-shadow: 4px 4px 5px black;
+  text-align: right;
 }
 .header-container {
   background-image: url("@/assets/header_neu.png");
