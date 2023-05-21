@@ -63,7 +63,7 @@ h1 {
 
 .home-logo-wrapper img.home-logo {
   height: auto;
-  width: min(50%, 150px);
+  width: min(80%, 150px);
 }
 
 .header__section {

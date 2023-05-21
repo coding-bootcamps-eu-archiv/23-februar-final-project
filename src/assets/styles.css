@@ -1,9 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --primary: #77facb;
   --primary-middle: #24ffaf;
   --primary-dark: #42b389;
   --secondary-dark: #ad4731;
   --secondary: #fa8369;
+  --s-font: 1rem;
+  --font-primary: black;
+  --font-secondary: white;
+  --p-dark: var(--font-primary);
+  --p-light: var(--font-secondary);
 }
 
 html,
@@ -36,10 +47,6 @@ input {
 :focus {
   border: 3px solid var(--primary-middle);
   outline: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
