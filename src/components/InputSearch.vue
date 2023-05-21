@@ -1,17 +1,11 @@
 <template>
   <section>
     <select id="quick-link" @change="fetchPlant">
-      <option value="">Bitte wählen</option>
+      <option value="">Schnellsuche</option>
       <option v-for="link in store.quickLinks" :key="link.id" :value="link.id">
         {{ link.name }}
       </option>
     </select>
-
-    <div v-for="plant in plants" :key="plant">
-      <router-link :to="{ name: 'plant', params: { id: plant } }">
-        {{
-      }}</router-link>
-    </div>
   </section>
 </template>
 
@@ -44,17 +38,24 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #quick-link {
   font-family: sans-serif;
+  background: var(--primary-dark);
   border: 3px solid var(--primary-dark);
-  border-radius: 3px;
-  box-shadow: 3px 3px 3px grey;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
   height: 25px;
   line-height: normal;
-  color: #282828;
+  color: black;
   user-select: auto;
   font-size: 12px;
-  padding: 0 6px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+
+:focus {
+  border: 3px solid var(--primary-middle);
+  outline: none;
 }
 </style>
