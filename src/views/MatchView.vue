@@ -9,7 +9,7 @@
     <div>
       <label for="first-plant"></label>
       <InputSearch />
-      <!-- <input
+      <input
         type="text"
         id="first-plant"
         name="first-plant"
@@ -25,7 +25,7 @@
     <div>
       <label for="secound-plant"></label>
       <InputSearch />
-      <!-- <input
+      <input
         type="text"
         id="secound-plant"
         name="secound-plant"
@@ -66,7 +66,6 @@ export default {
   },
   methods: {
     fetchPlant(e) {
-      // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
       if (e.key == "Enter") {
         fetch(
           `${this.url_base}plants?name_like=${this.query1}&friends_like=${this.query2}`
