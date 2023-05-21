@@ -57,26 +57,31 @@ export default {
           notImage: "@assets/mask-g1307a3e45_1920.jpg",
           url_base: "https://23-februar.api.cbe.uber.space/",
           query: "",
-          plant: {},
+          plant: [],
         },
       ],
     };
   },
   methods: {
-    fetchPlant(e) {
-      // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
-      if (e.key == "Enter") {
-        fetch(`${this.url_base}plants?name_like=${this.query}`)
-          .then((res) => {
-            return res.json();
-          })
-          .then(this.filteredPlants);
-      }
+    readDataFromApi() {
+      fetch(
+        `${process.env.VUE_APP_API_URL}/plants?name_like=${this.$route.params.input1}&friends_like=${this.$route.params.input2}`
+      )
+        .then((response) => {
+          if (response.status >= 200 && response.status <= 299) {
+            return response.json();
+          } else {
+            console.log("ERROR");
+          }
+        })
+        .then((plantsApi) => {
+          this.plants = plantsApi;
+          console.log(this.plants);
+        });
     },
-    filteredPlants(results) {
-      this.plant = results.name;
-      console.log(results);
-    },
+    // hotOrNot() {
+    //   this.data.this.plant[0].friends.includes(input2 - value);
+    // },
   },
 };
 </script>

@@ -12,8 +12,8 @@
             Biodünger ausgewählt werden.
           </p>
         </article>
-        <article class="item">
-          <h2>Paar Ideen</h2>
+        <article class="item2 item">
+          <h2>Ein paar Ideen</h2>
           <div>
             Im Garten oder im Biomüll finden wir verschiedene Zutaten wie,z.B.
             Eierschalen, Gemüsereste, Kaffeesatz oder gefallene Blätter, aus
@@ -45,6 +45,9 @@
   row-gap: 1rem;
   border-radius: 5px;
 }
+.item2 {
+  margin-bottom: 30px;
+}
 .item {
   background-color: #42b389;
   padding-left: 15px;
@@ -58,7 +61,7 @@
   background-size: cover;
   background-position: bottom;
 }
-/* ul {
+ul {
   list-style-type: none;
-} */
+}
 </style>
