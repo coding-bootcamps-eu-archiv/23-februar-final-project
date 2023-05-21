@@ -104,7 +104,7 @@ export default {
 <style scoped>
 .plants-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
@@ -130,5 +130,20 @@ h2 {
   height: 100px;
   background-size: cover;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .plants-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  div {
+    flex-direction: column;
+  }
 }
 </style>
