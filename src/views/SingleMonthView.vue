@@ -1,38 +1,23 @@
 <template>
   <section>
-    <div v-for="plant in plants" :key="plant.id">
-      <table class="table-item__table">
-        <thead>
-          <tr class="table-item__table-row">
-            <th class="r1c1">Pflanze</th>
-            <th class="r1c2">Direktsaat</th>
-            <th class="r1c3">Ernte</th>
-            <th class="r1c4">Pflege</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-item__table-row">
-            <td>
-              <div class="rows r2c1">
-                <!-- <span>{{ plant.group.name }}</span> -->
-                <span class="plant-name">{{ plant.name }}</span>
-                <router-link
-                  :to="{ name: 'plant', params: { id: plant.id } }"
-                  class="plant-img"
-                  :style="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[0]})`"
-                >
-                </router-link>
-              </div>
-            </td>
-            <td>{{ filterdSowing }} X</td>
-            <td>{{ filterdHarvestable }}</td>
-            <td>{{ filterdCare }}X</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2>In diesem Monat kannst du säen:</h2>
+    <div class="plants-grid">
+      <div v-for="plant in plants" :key="plant.id">
+        <div class="show-plants">
+          <!-- <span>{{ plant.group.name }}</span> -->
+          <span class="plant-name">{{ plant.name }}</span>
+          <router-link
+            :to="{ name: 'plant', params: { id: plant.id } }"
+            class="plant-img"
+            :style="`background-image: url(https://23-februar.api.cbe.uber.space${plant.images[0]})`"
+          >
+          </router-link>
+        </div>
+      </div>
     </div>
   </section>
 </template>
+
 <script>
 export default {
   data() {
@@ -86,8 +71,8 @@ export default {
     readDataFromApi() {
       // const currentMonth = this.$route.params.month;
       fetch(
-        `${process.env.VUE_APP_API_URL}/plants?directSowing_like=${this.$route.params.month}&harvestable_like=${this.$route.params.month}`
-        //Doppelte ssuche nach hervesable und directSowing
+        `${process.env.VUE_APP_API_URL}/plants?directSowing_like=${this.$route.params.month}`
+        // &harvestable_like=${this.$route.params.month}
         // this.$route.params.month
       )
         .then((response) => {
@@ -117,37 +102,26 @@ export default {
 </script>
 
 <style scoped>
-.table-item__table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
-  width: 100%;
-}
-.table-item__table-row:hover button {
-  opacity: 1;
-}
-.table-item__table thead tr {
-  background-color: var(--primary);
-  color: black;
-  text-align: center;
+.plants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
   justify-content: center;
 }
-.table-item__table th,
-.table-item__table td {
-  padding: 12px 15px;
+h2 {
+  text-align: center;
 }
-
-.rows {
+.show-plants {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 10px;
 }
 .plant-name {
   font-size: 1rem;
+  color: #42b389;
 }
 .plant-img {
   border: 5px solid #42b389;
@@ -156,5 +130,20 @@ export default {
   height: 100px;
   background-size: cover;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .plants-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  div {
+    flex-direction: column;
+  }
 }
 </style>

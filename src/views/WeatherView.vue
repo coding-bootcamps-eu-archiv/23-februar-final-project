@@ -5,6 +5,7 @@
         <input
           type="text"
           class="search-bar"
+          placeholder="Gib deine Stadt ein"
           v-model="query"
           @keypress="fetchWeather"
         />
@@ -70,7 +71,7 @@ export default {
         "Dezember",
       ];
       let days = [
-        "sonntag",
+        "Sonntag",
         "Montag",
         "Dienstag",
         "Mittwoch",
@@ -95,18 +96,52 @@ export default {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
   background-size: cover;
   background-position: bottom;
+  text-align: center;
 
   height: 100vw;
   padding: 25px;
 }
 
+.search-bar {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  width: 50%;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+input:focus {
+  outline: none;
+}
+
+.weather-container {
+  margin: 10%;
+  font-size: 25px;
+  color: white;
+
+  background-color: rgb(66, 179, 137, 0.25);
+  border-radius: 20px;
+}
+
 .location-content .date {
   text-align: center;
+  color: white;
+  text-shadow: 1px 3px black;
 }
 
 .location-content .location {
-  font-style: italic;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  font-size: 40px;
+  text-shadow: 1px 3px black;
 }
 
 .weather-content {
@@ -115,15 +150,17 @@ export default {
 .weather-content .temp {
   display: inline-block;
   padding: 10px 25px;
+  color: black;
 
   background-color: aliceblue;
   border: 16px;
-  margin: 30px 0px;
+  border-radius: 3px;
+  margin: 40px 0px;
   box-shadow: 3px 6px black;
 }
 
 .weather-content .weather {
-  font-style: italic;
+  text-shadow: 1px 3px black;
+  padding-bottom: 20px;
 }
 </style>
->

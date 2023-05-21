@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main-section">
     <div>
       <section class="area-main">
         <article class="item">
@@ -46,5 +46,10 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px 10px 10px 10px;
+}
+.main-section {
+  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
 }
 </style>

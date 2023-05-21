@@ -8,7 +8,8 @@
     </p>
     <div>
       <label for="first-plant"></label>
-      <input
+      <InputSearch />
+      <!-- <input
         type="text"
         id="first-plant"
         name="first-plant"
@@ -23,7 +24,8 @@
     </div>
     <div>
       <label for="secound-plant"></label>
-      <input
+      <InputSearch />
+      <!-- <input
         type="text"
         id="secound-plant"
         name="secound-plant"
@@ -38,10 +40,13 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 
+import InputSearch from "@/components/InputSearch.vue";
+
 export default {
   name: "MatchView",
   components: {
     BaseButton,
+    InputSearch,
   },
   data() {
     return {
@@ -61,6 +66,7 @@ export default {
   },
   methods: {
     fetchPlant(e) {
+      // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
       if (e.key == "Enter") {
         fetch(
           `${this.url_base}plants?name_like=${this.query1}&friends_like=${this.query2}`
@@ -81,3 +87,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#quick-link {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+</style>

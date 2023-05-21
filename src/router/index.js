@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import { useMainStore } from "@/store/MainStore.js";
 
 const routes = [
   {
@@ -23,7 +24,12 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
   },
   {
-    path: "/months/:month",
+    path: "/impressum",
+    name: "impressum",
+    component: () => import("../views/ImpressumView.vue"),
+  },
+  {
+    path: "/months",
     name: "months",
     component: () => import("../views/MonthsView.vue"),
   },
@@ -47,6 +53,11 @@ const routes = [
     name: "sorting",
     component: () => import("../views/SingleSortView.vue"),
   },
+  {
+    path: "/singlemonth/:month",
+    name: "singlemonth",
+    component: () => import("../views/SingleMonthView.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -54,4 +65,8 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach(() => {
+  const store = useMainStore();
+  store.menuActive = false;
+});
 export default router;

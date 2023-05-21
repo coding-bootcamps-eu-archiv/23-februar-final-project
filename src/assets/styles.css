@@ -1,9 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --primary: #77facb;
   --primary-middle: #24ffaf;
   --primary-dark: #42b389;
   --secondary-dark: #ad4731;
   --secondary: #fa8369;
+  --s-font: 1rem;
+  --font-primary: black;
+  --font-secondary: white;
+  --p-dark: var(--font-primary);
+  --p-light: var(--font-secondary);
 }
 
 html,
@@ -15,31 +26,7 @@ body,
 html,
 button,
 input {
-  font-family: sans-serif;
-}
-
-input {
-  border: 3px solid var(--primary-dark);
-  border-radius: 3px;
-  box-shadow: 3px 3px 3px grey;
-  height: 25px;
-  line-height: normal;
-  color: #282828;
-  display: block;
-  width: 100%;
-
-  user-select: auto;
-  font-size: 12px;
-  padding: 0 6px;
-  padding-left: 12px;
-}
-:focus {
-  border: 3px solid var(--primary-middle);
-  outline: none;
-}
-
-* {
-  box-sizing: border-box;
+  font-family: "montserrat-text";
 }
 
 body {
@@ -48,9 +35,15 @@ body {
 }
 
 @font-face {
-  font-family: "candela";
+  font-family: "montserrat";
   font-weight: 400;
-  src: url("/public/fonts/candela/CandelaBold.otf");
+  src: url("/public/fonts/montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "montserrat-text";
+  font-weight: 400;
+  src: url("/public/fonts/montserrat-text/Montserrat-Regular.ttf");
 }
 
 @font-face {
@@ -61,15 +54,16 @@ body {
 
 h1 {
   color: var(--secondary);
-  font-family: "denseletters";
-  font-size: 35px;
-  text-shadow: 4px 4px 5px black;
+  font-family: "montserrat";
+  font-size: 40px;
+  text-shadow: 2px 2px 3px black;
+  text-align: center;
 }
 
 h2 {
   color: var(--secondary-dark);
-  margin-bottom: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
+  font-family: "montserrat";
 }
 h3,
 h4 {

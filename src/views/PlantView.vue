@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="plant">
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -9,57 +9,63 @@
           key="image"
           alt="Image"
         />
+        <section class="png-wrapper">
+          <span class="direct-sowing">
+            <img
+              class="icon"
+              type="icon"
+              src="@/assets/icons/seeding.png"
+              key="seeding-image"
+              alt="Seeding"
+            />
+            <p>{{ plant.directSowing.toString() }}</p>
+          </span>
 
-        <span class="direct-sowing">
-          <img
-            type="icon"
-            src="@/assets/icons/seeding.png"
-            key="seeding-image"
-            alt="Seeding"
-          />
-          <p>{{ plant.directSowing.toString() }}</p>
-        </span>
+          <span class="plant-distance">
+            <img
+              class="icon"
+              type="icon"
+              src="@/assets/icons/distance.png"
+              key="distance-image"
+              alt="Distance"
+            />
 
-        <span class="plant-distance">
-          <img
-            type="icon"
-            src="@/assets/icons/distance.png"
-            key="distance-image"
-            alt="Distance"
-          />
+            <p>{{ plant.plantDistance }} cm</p>
+          </span>
 
-          <p>{{ plant.plantDistance }} cm</p>
-        </span>
+          <span class="harvestable">
+            <img
+              class="icon"
+              type="icon"
+              src="@/assets/icons/carrots.png"
+              key="harvest-image"
+              alt="Harvest"
+            />
+            <p>{{ plant.harvestable.toString() }}</p>
+          </span>
 
-        <span class="pharvestable">
-          <img
-            type="icon"
-            src="@/assets/icons/carrots.png"
-            key="harvest-image"
-            alt="Harvest"
-          />
-          <p>{{ plant.harvestable.toString() }}</p>
-        </span>
+          <span class="location">
+            <img
+              class="icon"
+              type="icon"
+              src="@/assets/icons/cloudy.png"
+              key="location-image"
+              alt="Location"
+            />
+            <p>{{ plant.location.toString() }}</p>
+          </span>
 
-        <span class="location">
-          <img
-            type="icon"
-            src="@/assets/icons/cloudy.png"
-            key="location-image"
-            alt="Location"
-          />
-          <p>{{ plant.location.toString() }}</p>
-        </span>
-
-        <span class="Pflege">
-          <img
-            type="icon"
-            src="@/assets/icons/plant.png"
-            key="care-image"
-            alt="Care"
-          />
-          <p>{{ plant.care.toString() }}</p>
-        </span>
+          <span class="care">
+            <img
+              class="icon"
+              type="icon"
+              src="@/assets/icons/plant.png"
+              key="care-image"
+              alt="Care"
+            />
+            <p>{{ plant.care.toString() }}</p>
+          </span>
+        </section>
       </div>
     </section>
 
@@ -87,7 +93,7 @@ export default {
   components: {},
   data() {
     return {
-      plant: {},
+      plant: null,
     };
   },
   methods: {
@@ -117,7 +123,7 @@ export default {
   box-sizing: border-box;
 }
 
-main {
+body {
   display: flex;
   flex-direction: row;
 }
@@ -128,7 +134,20 @@ main {
 
 .left-content {
   display: flex;
+  padding-top: 1rem;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.png-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center;
+  justify-content: center; */
+
+  width: 90%;
+  margin-inline: auto;
 }
 
 .right-content {
@@ -137,10 +156,13 @@ main {
 }
 
 p {
-  font-size: 1.5vw;
+  font-size: var(--s-font);
   margin: 0.5rem;
 }
-
+.png-wrapper p {
+  color: var(--p-light);
+  font-size: var(--s-font);
+}
 div {
   display: flex;
   flex-direction: row;
@@ -151,9 +173,36 @@ section {
   display: flex;
 }
 
+.container-left {
+  width: 40%;
+}
+
+.container-right {
+  width: 60%;
+}
+
 @media screen and (max-width: 480px) {
   div {
     flex-direction: column;
+  }
+  .png-wrapper {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+    flex-direction: column;
+  }
+  .icon {
+    --icon-wh: 50px;
+    filter: invert();
+    width: var(--icon-wh);
+    height: var(--icon-wh);
+  }
+  .container-left {
+    width: 100%;
+  }
+
+  .container-right {
+    width: 100%;
   }
 }
 
@@ -163,29 +212,37 @@ section {
   }
 }
 
+.icon {
+  filter: invert();
+}
+
 img {
   height: 5vw;
   width: 5vw;
   float: left;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-inline: 1rem;
   margin-bottom: 1rem;
 }
 
 .first-plant-picture,
 .secound-plant-picture {
   height: 70%;
-  width: 70%;
+  width: 90%;
+  margin-inline: auto;
+  background-image: cover;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary);
+  margin-block: 1rem 2rem;
 }
 
 .info-text {
-  background-color: #42b389;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 10px 10px 10px 10px;
-  padding: 1.5vw;
-  background-color: var(--primay-dark);
+  color: var(--p-dark);
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  margin-inline: auto;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: var(--primary-dark);
 }
 </style>

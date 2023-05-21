@@ -2,7 +2,7 @@
   <div
     class="side-menu"
     :style="{
-      width: active ? '250px' : '0px',
+      width: store.menuActive ? '250px' : '0px',
     }"
   >
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
@@ -11,6 +11,9 @@
       <summary>Pflanzen</summary>
       <div>
         <ul>
+          <li>
+            <router-link to="/allplants">Alle</router-link>
+          </li>
           <li>
             <router-link to="/sorting/fruits">Obst</router-link>
           </li>
@@ -24,23 +27,34 @@
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
+    <router-link to="/months">TEST</router-link>
   </div>
 
   <button class="openbtn" @click="handleClick">&#9776;</button>
 </template>
 
 <script>
+import { useMainStore } from "@/store/MainStore.js";
 export default {
   emits: ["button-click"],
+  setup() {
+    const store = useMainStore();
+    return {
+      store,
+    };
+  },
   data() {
     return {
       plants: [],
-      active: false,
     };
   },
   methods: {
     handleClick() {
-      this.active = !this.active;
+      this.store.menuActive = !this.store.menuActive;
+    },
+
+    closeSidebarMenu() {
+      this.isOpen = false;
     },
     readDataFromApi() {
       fetch(`${process.env.VUE_APP_API_URL}/plants?_expand=group`)
