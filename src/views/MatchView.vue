@@ -14,8 +14,8 @@
         id="first-plant"
         name="first-plant"
         placeholder="Gib eine Pflanze ein"
-        v-model="query"
-      /> -->
+        v-model="query1"
+      />
     </div>
     <div class="current-match-picture">
       <div v-if="value === undefined">{{ matchImages.startImage }}</div>
@@ -30,8 +30,8 @@
         id="secound-plant"
         name="secound-plant"
         placeholder="Gib eine Pflanze ein"
-        v-model="query"
-      /> -->
+        v-model="query2"
+      />
     </div>
     <BaseButton @click="show(matchImages)">Hot or Not</BaseButton>
   </section>
@@ -56,32 +56,51 @@ export default {
           hotImage: "@/assets/daisies-g946f9165c_1920.jpg",
           notImage: "@assets/mask-g1307a3e45_1920.jpg",
           url_base: "https://23-februar.api.cbe.uber.space/",
-          query: "",
+          query1: "",
+          query2: "",
           plant: [],
+          match: false,
         },
       ],
     };
   },
   methods: {
-    readDataFromApi() {
-      fetch(
-        `${process.env.VUE_APP_API_URL}/plants?name_like=${this.$route.params.input1}&friends_like=${this.$route.params.input2}`
-      )
-        .then((response) => {
-          if (response.status >= 200 && response.status <= 299) {
-            return response.json();
-          } else {
-            console.log("ERROR");
-          }
-        })
-        .then((plantsApi) => {
-          this.plants = plantsApi;
-          console.log(this.plants);
-        });
+    fetchPlant(e) {
+      // https://23-februar.api.cbe.uber.space/plants?name_like=Salat&friends_like=Kohl
+      if (e.key == "Enter") {
+        fetch(
+          `${this.url_base}plants?name_like=${this.query1}&friends_like=${this.query2}`
+        )
+          .then((res) => {
+            return res.json();
+          })
+          .then(this.filteredPlants);
+      }
     },
-    // hotOrNot() {
-    //   this.data.this.plant[0].friends.includes(input2 - value);
-    // },
+    filteredPlants(results) {
+      this.plant = results.name;
+      console.log(results);
+    },
+    hotOrNot() {
+      this.match = this.plant[0].friends.includes(this.query2);
+    },
   },
 };
 </script>
+
+<style scoped>
+#quick-link {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+</style>
