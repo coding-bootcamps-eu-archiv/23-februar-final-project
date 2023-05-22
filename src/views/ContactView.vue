@@ -68,9 +68,15 @@ h2,
 p {
   color: white;
 }
-/* .contact-content {
-  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
-  background-size: cover;
-  background-position: center center;
-} */
+@media screen and (min-width: 900px) {
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .github-logo {
+    height: 5rem;
+  }
+}
 </style>
