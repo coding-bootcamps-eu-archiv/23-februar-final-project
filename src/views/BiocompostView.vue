@@ -45,10 +45,11 @@
   flex-direction: column;
   row-gap: 1rem;
   border-radius: 5px;
+  text-align: left;
+  height: 100%;
+  padding: 25px;
 }
-.item2 {
-  margin-bottom: 30px;
-}
+
 .item {
   background-color: #42b389;
   padding-left: 15px;
