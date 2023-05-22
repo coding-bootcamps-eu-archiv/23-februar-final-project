@@ -89,6 +89,9 @@ export default {
         `${process.env.VUE_APP_API_URL}/plants?directSowing_like=${this.$route.params.month}&harvestable_like=${this.$route.params.month}`
         //Doppelte ssuche nach hervesable und directSowing
         // this.$route.params.month
+
+        //  `${process.env.VUE_APP_API_URL}/plants?_expand=group``${this.url_base}plants?name_like=${this.query1}&friends_like=${this.query2}`
+        // )
       )
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {

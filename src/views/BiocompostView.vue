@@ -6,29 +6,30 @@
           <h2>Warum Biodünger</h2>
           <p>
             Jede Pflanze braucht gewisse Nährstoffe, wie z.B. Kalium, Stickstoff
-            oder Phosphorum stark und gesund zu bleiben. Zusätzlich müss der
-            Boden mit zusätzlichen Mineralstoffen besorgt werden. Als eine
-            Alternative für chemische Düngermittel, kann ein selbsthergestellter
-            Biodünger ausgewählt werden.
+            oder Phosphor um stark und gesund zu bleiben. Auch der Boden muss
+            mit zusätzlichen Mineralstoffen versorgt werden.Als Alternative für
+            chemische Düngermittel, kann ein selbsthergestellter Biodünger
+            ausgewählt werden.
           </p>
         </article>
         <article class="item2 item">
           <h2>Ein paar Ideen</h2>
           <div>
-            Im Garten oder im Biomüll finden wir verschiedene Zutaten wie,z.B.
-            Eierschalen, Gemüsereste, Kaffeesatz oder gefallene Blätter, aus
-            denen wir einen Biodünger herstellen können. Wenn wir Hühner oder
-            Enten im Garten halten, können wir das Gemüsebeet mit dem Mist von
-            Nutztieren düngen. Hier ein Paar Beispiele für organische Biodünger:
+            Im Garten oder im Biomüll finden wir verschiedene Sachen wie, z.B.
+            Eierschalen, Gemüsereste, Kaffeesatz oder Laub, aus denen wir einen
+            Biodünger herstellen können. Wenn wir Hühner oder Enten im Garten
+            halten, können wir das Gemüsebeet mit dem Mist von Nutztieren
+            düngen. Hier ein paar Beispiele für organische Biodünger:
             <ul>
-              <li>Eierschalend-Dünger</li>
-              <li>Brennnesseljauche</li>
-              <li>Kaffeesatz-Dünger</li>
-              <li>Tiermist-Dünger</li>
-              <li>Kompost</li>
+              <li><span>🥚</span>Eierschalen-Dünger</li>
+              <li><span>🍂</span> Brennesseljauche</li>
+              <li><span>☕</span> Kaffeesatz-Dünger</li>
+              <li><span>🐔</span>Tiermist-Dünger</li>
+              <li><span>🪣</span> Kompost</li>
             </ul>
-            Lass dich inspirieren und verziechte auf Chemikalien.. denn "Du bist
-            was du isst.", sagte mal der detuche Pghilosph Ludwig Feuerbach!
+            Lass dich inspirieren und verziechte auf Chemikalien.. denn
+            <em> "Du bist was du isst"</em> , sagte mal der detuche Philosph
+            Ludwig Feuerbach!
           </div>
         </article>
       </section>
@@ -63,5 +64,10 @@
 }
 ul {
   list-style-type: none;
+}
+[data-icon]:before {
+  font-family: icons; /* BYO icon font, mapped smartly */
+  content: attr(data-icon);
+  speak-as: none;
 }
 </style>
