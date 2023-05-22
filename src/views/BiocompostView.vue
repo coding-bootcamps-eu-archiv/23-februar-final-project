@@ -7,8 +7,8 @@
           <p>
             Jede Pflanze braucht gewisse Nährstoffe, wie z.B. Kalium, Stickstoff
             oder Phosphor um stark und gesund zu bleiben. Auch der Boden muss
-            mit zusätzlichen Mineralstoffen versorgt werden.Als Alternative für
-            chemische Düngermittel, kann ein selbsthergestellter Biodünger
+            mit zusätzlichen Mineralstoffen versorgt werden. Als Alternative für
+            chemische Düngemittel, kann ein selbsthergestellter Biodünger
             ausgewählt werden.
           </p>
         </article>
@@ -21,14 +21,14 @@
             halten, können wir das Gemüsebeet mit dem Mist von Nutztieren
             düngen. Hier ein paar Beispiele für organische Biodünger:
             <ul>
-              <li><span>🥚</span>Eierschalen-Dünger</li>
+              <li><span>🥚</span> Eierschalen-Dünger</li>
               <li><span>🍂</span> Brennesseljauche</li>
               <li><span>☕</span> Kaffeesatz-Dünger</li>
-              <li><span>🐔</span>Tiermist-Dünger</li>
+              <li><span>🐔</span> Tiermist-Dünger</li>
               <li><span>🪣</span> Kompost</li>
             </ul>
-            Lass dich inspirieren und verziechte auf Chemikalien.. denn
-            <em> "Du bist was du isst"</em> , sagte mal der detuche Philosph
+            Lass dich inspirieren und verzichte auf Chemikalien - denn
+            <em> "Du bist was du isst"</em> , sagte mal der deutsche Philosoph
             Ludwig Feuerbach!
           </div>
         </article>
@@ -56,6 +56,8 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px 10px 10px 10px;
+  padding: 0.6rem;
+  margin-inline: auto;
 }
 .main-section {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
