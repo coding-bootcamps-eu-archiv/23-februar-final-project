@@ -9,9 +9,23 @@
     <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
     <div>
-      <input type="text" v-model="plant1" />
+      <select class="quick-link" v-model="plant1">
+        <option value="">Bitte wählen</option>
+        <option v-for="link in plants" :key="link.id" :value="link.id">
+          {{ link.name }}
+        </option>
+      </select>
     </div>
-    <div><input type="text" v-model="plant2" /></div>
+    <div>
+      <select class="quick-link" v-model="plant2">
+        <option value="">Bitte wählen</option>
+        <option v-for="link in plants" :key="link.id" :value="link.id">
+          {{ link.name }}
+        </option>
+      </select>
+    </div>
+    <div>{{ plant1 }}</div>
+    <div>{{ plant2 }}</div>
     <p class="p-check" v-if="match">HOT</p>
     <!--- oder wenn v-if="filterdFriends" also wenn das ergebnis true ist--->
     <p class="p-check" v-else>NOT</p>
@@ -21,7 +35,7 @@
     <div class="img-not" v-else>
       <img class="not" src="@/assets/mask-g1307a3e45_1920.jpg" />
     </div>
-    <BaseButton @click="match = !match" />
+    <BaseButton @click="checkMatch">HotOrNot</BaseButton>
   </section>
 </template>
 
@@ -71,9 +85,16 @@ export default {
           // console.log(this.plants.name);
         });
     },
+
     checkMatch() {
-      if (this.plants.friends.includes(this.plant1)) {
-        return this.match == true;
+      const plant1Data = this.plants.find((item) => item.id === this.plant1);
+      const plant2Data = this.plants.find((item) => item.id === this.plant2);
+      console.log(plant1Data, "x");
+      console.log(plant2Data);
+      if (plant1Data.friends.includes(plant2Data.name)) {
+        this.match = true;
+      } else {
+        this.match = false;
       }
     },
     filterdPlants() {
