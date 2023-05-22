@@ -2,12 +2,10 @@
   <section class="grid-content">
     <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
-
     <div>
       <input type="text" v-model="plant1" />
     </div>
     <div><input type="text" v-model="plant2" /></div>
-
     <p v-if="match">HOT</p>
     <!--- oder wenn v-if="filterdFriends" also wenn das ergebnis true ist--->
     <p v-else>NOT</p>

@@ -33,8 +33,8 @@
 
 <style scoped>
 .contact {
-  position: absolute;
-  width: 100%;
+  /* position: absolute; */
+  /* width: 100%;
   height: 100%;
   padding: 10px;
   display: flex;
@@ -43,8 +43,20 @@
   align-items: left;
   row-gap: 10px;
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
+  object-fit: contain; */
+  /* background-size: cover; */
+  /* background-position: bottom; */
+  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
   background-size: cover;
   background-position: bottom;
+  text-align: center;
+
+  height: 100vw;
+  padding: 25px;
+}
+
+.contact > div {
+  padding-top: 2rem;
 }
 .github-logo {
   height: 3rem;
@@ -56,9 +68,9 @@ h2,
 p {
   color: white;
 }
-.contact-content {
+/* .contact-content {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
   background-size: cover;
-  background-position: bottom;
-}
+  background-position: center center;
+} */
 </style>
