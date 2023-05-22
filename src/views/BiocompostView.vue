@@ -45,11 +45,10 @@
   flex-direction: column;
   row-gap: 1rem;
   border-radius: 5px;
-  text-align: left;
-  height: 100%;
-  padding: 25px;
 }
-
+.item2 {
+  margin-bottom: 30px;
+}
 .item {
   background-color: #42b389;
   padding-left: 15px;
@@ -57,8 +56,6 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px 10px 10px 10px;
-  padding: 0.6rem;
-  margin-inline: auto;
 }
 .main-section {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
