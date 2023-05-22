@@ -142,6 +142,8 @@
   flex-direction: column;
   row-gap: 1rem;
   border-radius: 5px;
+  padding: 0.6rem;
+  margin-inline: auto;
 }
 .item {
   background-color: #42b389;
