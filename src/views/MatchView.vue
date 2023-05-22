@@ -92,7 +92,14 @@ export default {
 <style scoped>
 .match-description {
   font-size: 1rem;
-  color: white;
+  background-color: #42b389;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0.6rem;
+  margin-inline: auto;
 }
 p {
   font-size: 5rem;
