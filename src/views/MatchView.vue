@@ -1,5 +1,9 @@
 <template>
   <section class="grid-content">
+    <h3 class="match-description">
+      Manche Pflanzen sind firiends und andere vertragen sich gar nichts. Finde
+      heraus, welche Pflanzen zusammenpassen:
+    </h3>
     <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
     <div>
@@ -84,6 +88,10 @@ export default {
 </script>
 
 <style scoped>
+.match-description {
+  font-size: 1rem;
+  color: white;
+}
 p {
   font-size: 5rem;
   color: red;
