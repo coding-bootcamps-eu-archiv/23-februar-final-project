@@ -1,8 +1,10 @@
 <template>
   <section class="grid-content">
     <h3 class="match-description">
-      Manche Pflanzen sind friends und andere vertragen sich gar nichts. Finde
-      heraus, welche Pflanzen zusammenpassen:
+      Hot or Not - das ist hier die Frage. Auf dieser Seite kannst du
+      herausfinden, ob die Pflanzen, die du dir für deinen Garten ausgesucht
+      hast, zusammenpassen, oder sich nicht vertragen. Gib in die beiden Felder
+      einfach die Pflanzen ein und click auf den Button:
     </h3>
     <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
