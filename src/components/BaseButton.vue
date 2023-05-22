@@ -9,7 +9,11 @@
 <style scoped>
 .base-button {
   align-items: center;
-  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  background-image: linear-gradient(
+    135deg,
+    var(--secondary-dark) 40%,
+    var(--primary-dark)
+  );
   border: 0;
   border-radius: 10px;
   box-sizing: border-box;

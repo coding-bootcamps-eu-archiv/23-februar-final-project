@@ -100,6 +100,25 @@ export default {
 </script>
 
 <style scoped>
+.quick-link {
+  font-family: sans-serif;
+  background: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px black;
+  height: 25px;
+  line-height: normal;
+  color: black;
+  user-select: auto;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-right: 1%;
+}
+
+:focus {
+  border: 3px solid var(--primary-middle);
+  outline: none;
+}
 .match-description {
   background-color: #42b389;
   padding-left: 15px;
@@ -111,13 +130,13 @@ export default {
   margin-inline: auto;
 }
 .p-check {
-  font-size: 5rem;
-  color: red;
+  font-size: 40px;
+  color: var(--secondary);
+  text-shadow: 2px 2px 3px black;
 }
 
 img {
-  width: 300px;
-  height: 300px;
+  width: 20vw;
   background-size: cover;
   border-radius: 50%;
 }
