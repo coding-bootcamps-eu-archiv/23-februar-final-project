@@ -22,7 +22,7 @@
             düngen. Hier ein paar Beispiele für organische Biodünger:
             <ul>
               <li><span>🥚</span>Eierschalen-Dünger</li>
-              <li><span>🍂</span> Brennnesseljauche</li>
+              <li><span>🍂</span> Brennesseljauche</li>
               <li><span>☕</span> Kaffeesatz-Dünger</li>
               <li><span>🐔</span>Tiermist-Dünger</li>
               <li><span>🪣</span> Kompost</li>
