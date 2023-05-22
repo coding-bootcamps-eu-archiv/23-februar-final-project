@@ -1,7 +1,7 @@
 <template>
   <section class="grid-content">
     <h3 class="match-description">
-      Manche Pflanzen sind firiends und andere vertragen sich gar nichts. Finde
+      Manche Pflanzen sind friends und andere vertragen sich gar nichts. Finde
       heraus, welche Pflanzen zusammenpassen:
     </h3>
     <div class="result">{{ filterdFriends }}</div>
