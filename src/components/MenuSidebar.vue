@@ -27,7 +27,6 @@
     <router-link to="/biocompost">Biodünger</router-link>
     <router-link to="/weather">Wetter-Check</router-link>
     <router-link to="/contact">Kontakt</router-link>
-    <router-link to="/months">TEST</router-link>
   </div>
 
   <button class="openbtn" @click="handleClick">&#9776;</button>
