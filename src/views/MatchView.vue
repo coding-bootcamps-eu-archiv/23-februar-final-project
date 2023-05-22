@@ -6,7 +6,6 @@
       hast, zusammenpassen, oder sich nicht vertragen. Gib in die beiden Felder
       einfach die Pflanzen ein und click auf den Button:
     </p>
-    <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
     <div>
       <select class="quick-link" v-model="plant1">
@@ -24,10 +23,7 @@
         </option>
       </select>
     </div>
-    <div>{{ plant1 }}</div>
-    <div>{{ plant2 }}</div>
     <p class="p-check" v-if="match">HOT</p>
-    <!--- oder wenn v-if="filterdFriends" also wenn das ergebnis true ist--->
     <p class="p-check" v-else>NOT</p>
     <div class="img-hot" v-if="match">
       <img class="hot" src="@/assets/daisies-g946f9165c_1920.jpg" />
@@ -60,14 +56,8 @@ export default {
       return this.plants.friends.includes(this.plant1);
     },
     filterdFriends() {
-      return this.plants.filter((item) => item.friends.includes(this.plant1)); //WIE KANN MAN DAS ERGEBNIS SPEICHERN ALS LIST????
-      // if (item.name === this.plant2);
-      // return true;
+      return this.plants.filter((item) => item.friends.includes(this.plant1));
     },
-    //----------------LÖSUNG:  wenn filterdFriends.name === this.plant2 => HOT else NOT ----------------------
-
-    // this.${plant1}.name
-    // {$this.plant1}.name
   },
   methods: {
     readDataFromApi() {
@@ -82,7 +72,6 @@ export default {
         .then((plantsApi) => {
           this.plants = plantsApi;
           console.log(this.plants);
-          // console.log(this.plants.name);
         });
     },
 
