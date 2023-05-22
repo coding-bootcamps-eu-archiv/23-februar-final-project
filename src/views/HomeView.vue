@@ -1,25 +1,21 @@
 <template>
-  <section class="main-section">
-    <div>
-      <section class="area-main">
-        <article class="item">
-          <h2>Die Idee</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam
-            ad eius eaque debitis nobis error labore, ex qui. Deleniti rem et ad
-            iste expedita eos nobis voluptate sapiente corporis!
-          </p>
-        </article>
-        <article class="item">
-          <h2>Garten Infos</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam
-            ad eius eaque debitis nobis error labore, ex qui. Deleniti rem et ad
-            iste expedita eos nobis voluptate sapiente corporis!
-          </p>
-        </article>
-      </section>
-    </div>
+  <section class="area-main">
+    <article class="item">
+      <h2>Die Idee</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam ad
+        eius eaque debitis nobis error labore, ex qui. Deleniti rem et ad iste
+        expedita eos nobis voluptate sapiente corporis!
+      </p>
+    </article>
+    <article class="item">
+      <h2>Garten Infos</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam ad
+        eius eaque debitis nobis error labore, ex qui. Deleniti rem et ad iste
+        expedita eos nobis voluptate sapiente corporis!
+      </p>
+    </article>
   </section>
 </template>
 
@@ -33,23 +29,25 @@ export default {
 <style scoped>
 .area-main {
   margin-top: 2rem;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   border-radius: 5px;
-}
-.item {
-  background-color: #42b389;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 10px 10px 10px 10px;
-}
-.main-section {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
+
   background-size: cover;
   background-position: bottom;
+  text-align: center;
+
+  height: 100%;
+  padding: 25px;
+}
+.item {
+  width: 100%;
+  background-color: #42b389;
+  padding: 0.6rem;
+  margin-inline: auto;
+  border-radius: 10px 10px 10px 10px;
 }
 </style>

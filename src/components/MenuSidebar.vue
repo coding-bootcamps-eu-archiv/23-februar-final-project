@@ -8,7 +8,7 @@
     <a href="#" class="closebtn" @click.prevent="handleClick">&times;</a>
 
     <details>
-      <summary>Pflanzen</summary>
+      <summary class="menu">Pflanzen</summary>
       <div>
         <ul>
           <li>
@@ -101,6 +101,19 @@ export default {
 
 summary {
   cursor: pointer;
+  position: relative;
+}
+
+.menu::after {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  translate: 50% 50%;
+  content: "";
+  width: 20px;
+  height: 15px;
+  background: black;
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
 }
 
 ul {

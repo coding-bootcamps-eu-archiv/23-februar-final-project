@@ -11,6 +11,7 @@
   --secondary-dark: #ad4731;
   --secondary: #fa8369;
   --s-font: 1rem;
+  --clr-bkg: #262827;
   --font-primary: black;
   --font-secondary: white;
   --p-dark: var(--font-primary);
@@ -30,7 +31,7 @@ input {
 }
 
 body {
-  background-color: #262827;
+  background-color: var(--clr-bkg);
   margin: 0;
 }
 

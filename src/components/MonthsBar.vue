@@ -2,7 +2,7 @@
   <section
     class="months-list"
     :style="{
-      background: active ? '#ad4731' : '#fa8369',
+      background: active ? '#262827' : '#262827',
     }"
   >
     <button class="tab" @click.prevent="handleClick('Januar')">Jan</button>
@@ -51,13 +51,29 @@ export default {
   display: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0;
+  gap: 0.7rem 1rem;
+  width: 95%;
+  margin-inline: auto;
+  margin-block: 1rem;
 }
 .tab {
+  all: unset;
   height: 30px;
-  background-color: #fa8369;
+  color: var(--primary-dark);
+  background-color: var(--clr-bkg);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  border-color: #fa8369;
+  border-bottom: 2px solid var(--primary);
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px var(--primary);
+
+  cursor: pointer;
+}
+.tab:hover {
+  box-shadow: inset 0px 30px var(--primary);
+}
+.tab:active {
+  background: var(--primary);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>In diesem Monat kannst du säen:</h2>
+    <h1>In diesem Monat kannst du säen:</h1>
     <div class="plants-grid">
       <div v-for="plant in plants" :key="plant.id">
         <div class="show-plants">
@@ -108,8 +108,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
-h2 {
+h1 {
   text-align: center;
+  font-size: 1.5rem;
+  margin-block: 1.5rem 1rem;
 }
 .show-plants {
   display: flex;

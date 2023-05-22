@@ -9,7 +9,7 @@
     <div>
       <label for="first-plant"></label>
       <InputSearch />
-      <!-- <input
+      <input
         type="text"
         id="first-plant"
         name="first-plant"
@@ -25,7 +25,7 @@
     <div>
       <label for="secound-plant"></label>
       <InputSearch />
-      <!-- <input
+      <input
         type="text"
         id="secound-plant"
         name="secound-plant"
