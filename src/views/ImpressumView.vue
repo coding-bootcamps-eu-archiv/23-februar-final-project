@@ -142,8 +142,6 @@
   flex-direction: column;
   row-gap: 1rem;
   border-radius: 5px;
-  padding: 0.6rem;
-  margin-inline: auto;
 }
 .item {
   background-color: #42b389;
@@ -153,6 +151,8 @@
   margin-right: 20px;
   border-radius: 10px 10px 10px 10px;
   margin-bottom: 30px;
+  padding: 0.6rem;
+  margin-inline: auto;
 }
 .main-section {
   background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
