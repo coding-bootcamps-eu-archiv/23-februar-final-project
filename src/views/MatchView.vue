@@ -1,20 +1,20 @@
 <template>
   <section class="grid-content">
-    <h3 class="match-description">
+    <p class="match-description">
       Hot or Not - das ist hier die Frage. Auf dieser Seite kannst du
       herausfinden, ob die Pflanzen, die du dir für deinen Garten ausgesucht
       hast, zusammenpassen, oder sich nicht vertragen. Gib in die beiden Felder
       einfach die Pflanzen ein und click auf den Button:
-    </h3>
+    </p>
     <div class="result">{{ filterdFriends }}</div>
     <div class="name-plant">{{ plants.name }}</div>
     <div>
       <input type="text" v-model="plant1" />
     </div>
     <div><input type="text" v-model="plant2" /></div>
-    <p v-if="match">HOT</p>
+    <p class="p-check" v-if="match">HOT</p>
     <!--- oder wenn v-if="filterdFriends" also wenn das ergebnis true ist--->
-    <p v-else>NOT</p>
+    <p class="p-check" v-else>NOT</p>
     <div class="img-hot" v-if="match">
       <img class="hot" src="@/assets/daisies-g946f9165c_1920.jpg" />
     </div>
@@ -91,7 +91,6 @@ export default {
 
 <style scoped>
 .match-description {
-  font-size: 1rem;
   background-color: #42b389;
   padding-left: 15px;
   padding-right: 15px;
@@ -101,7 +100,7 @@ export default {
   padding: 0.6rem;
   margin-inline: auto;
 }
-p {
+.p-check {
   font-size: 5rem;
   color: red;
 }
