@@ -1,5 +1,5 @@
 <template>
-  <div v-if="plant">
+  <div v-if="plant" class="main-container">
     <!-------left------>
     <section class="container-left">
       <div class="left-content">
@@ -123,20 +123,23 @@ export default {
   box-sizing: border-box;
 }
 
+.main-container {
+  padding: 0 25px;
+}
 body {
   display: flex;
   flex-direction: row;
 }
 
 .h1 {
-  margin: 2rem;
+  margin: 2rem 0;
 }
 
 .left-content {
   display: flex;
   padding-top: 1rem;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
 }
 
@@ -179,9 +182,13 @@ section {
 
 .container-right {
   width: 60%;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 480px) {
+  .main-container {
+    padding: 0 10px;
+  }
   div {
     flex-direction: column;
   }
@@ -203,12 +210,25 @@ section {
 
   .container-right {
     width: 100%;
+    margin-left: 0;
   }
 }
 
 @media screen and (max-width: 900px) {
   div {
     flex-direction: column;
+  }
+  .container-left {
+    width: 100%;
+    display: block;
+  }
+
+  .container-right {
+    width: 100%;
+    margin-left: 0;
+  }
+  .main-container {
+    padding: 0 10px;
   }
 }
 
@@ -226,10 +246,9 @@ img {
 
 .first-plant-picture,
 .secound-plant-picture {
-  height: 70%;
-  width: 90%;
+  height: auto;
+  width: 100%;
   margin-inline: auto;
-  background-image: cover;
   border-radius: 0.5rem;
   border: 2px solid var(--primary);
   margin-block: 1rem 2rem;

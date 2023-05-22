@@ -14,23 +14,25 @@
         </article>
         <article class="item2 item">
           <h2>Ein paar Ideen</h2>
-          <div>
+          <p>
             Im Garten oder im Biomüll finden wir verschiedene Sachen wie, z.B.
             Eierschalen, Gemüsereste, Kaffeesatz oder Laub, aus denen wir einen
             Biodünger herstellen können. Wenn wir Hühner oder Enten im Garten
             halten, können wir das Gemüsebeet mit dem Mist von Nutztieren
             düngen. Hier ein paar Beispiele für organische Biodünger:
-            <ul>
-              <li><span>🥚</span> Eierschalen-Dünger</li>
-              <li><span>🍂</span> Brennesseljauche</li>
-              <li><span>☕</span> Kaffeesatz-Dünger</li>
-              <li><span>🐔</span> Tiermist-Dünger</li>
-              <li><span>🪣</span> Kompost</li>
-            </ul>
+          </p>
+          <ul>
+            <li><span>🥚</span> Eierschalen-Dünger</li>
+            <li><span>🍂</span> Brennesseljauche</li>
+            <li><span>☕</span> Kaffeesatz-Dünger</li>
+            <li><span>🐔</span> Tiermist-Dünger</li>
+            <li><span>🪣</span> Kompost</li>
+          </ul>
+          <p>
             Lass dich inspirieren und verzichte auf Chemikalien - denn
             <em> "Du bist was du isst"</em> , sagte mal der deutsche Philosoph
             Ludwig Feuerbach!
-          </div>
+          </p>
         </article>
       </section>
     </div>
@@ -56,13 +58,13 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px 10px 10px 10px;
+  padding: 20px;
 }
-.main-section {
-  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
-  background-size: cover;
-  background-position: bottom;
+p {
+  margin-bottom: 15px;
 }
 ul {
+  margin-bottom: 15px;
   list-style-type: none;
 }
 [data-icon]:before {
