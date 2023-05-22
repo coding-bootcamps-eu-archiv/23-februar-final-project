@@ -6,20 +6,14 @@
         Ein Garten kann ein wunderbarer Ort sein, um abzuschalten und seiner
         Arbeit beim wachsen zuzusehen. Damit das gelingt wollen wir, das sind
         Barbara und Raphaela, interessierte Gärtner*innen mit der App beim
-        Hobbygärtnern unterstützen. Du kannst dich mit hier über einzelne
-        Pflanzen informieren, dir auf einen Blick anschauen, in welchem Monat
-        welche Pflanzen gesät werden und herausfinden, ob die Pflanzen, die du
-        in deinem Garten haben möchtest, zusammenpassen, oder sich nicht gut
-        vertragen. Und du kannst das Wetter checken, wenn du einen Tag im Garten
-        verbringen möchtest.
+        Hobbygärtnern unterstützen.
       </p>
-    </article>
-    <article class="item">
-      <h2>Garten Infos</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam ad
-        eius eaque debitis nobis error labore, ex qui. Deleniti rem et ad iste
-        expedita eos nobis voluptate sapiente corporis!
+        Du kannst dich mit hier über einzelne Pflanzen informieren, dir auf
+        einen Blick anschauen, in welchem Monat welche Pflanzen gesät werden und
+        herausfinden, ob die Pflanzen, die du in deinem Garten haben möchtest,
+        zusammenpassen, oder sich nicht gut vertragen. Und du kannst das Wetter
+        checken, wenn du einen Tag im Garten verbringen möchtest.
       </p>
     </article>
   </section>
@@ -34,26 +28,28 @@ export default {
 
 <style scoped>
 .area-main {
-  margin-top: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  border-radius: 5px;
-  background-image: url("@/assets/flowers-gb00485f2a_1920.jpg");
-
-  background-size: cover;
-  background-position: bottom;
   text-align: center;
-
-  height: 100%;
   padding: 25px;
+  margin-bottom: 20px;
 }
 .item {
-  width: 100%;
-  background-color: #42b389;
-  padding: 0.6rem;
-  margin-inline: auto;
+  background: var(--primary-dark);
   border-radius: 10px 10px 10px 10px;
+  padding: 20px;
+}
+p {
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 900px) {
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .github-logo {
+    height: 5rem;
+  }
 }
 </style>
